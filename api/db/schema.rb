@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2019_07_22_014216) do
     t.string "name", null: false
     t.string "phone"
     t.string "address", null: false
-    t.string "type", null: false
+    t.string "client_type", null: false
   end
 
   create_table "clients_inventories", id: false, force: :cascade do |t|
