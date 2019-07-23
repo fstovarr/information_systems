@@ -15,7 +15,7 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import React from "react";
+import React, { useState } from "react";
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
 // @material-ui/core components
@@ -27,6 +27,7 @@ import Table from "components/Table/Table.jsx";
 import Card from "components/Card/Card.jsx";
 import CardHeader from "components/Card/CardHeader.jsx";
 import CardBody from "components/Card/CardBody.jsx";
+import Http from "services/RestService.js";
 
 const styles = {
   cardCategoryWhite: {
@@ -58,73 +59,69 @@ const styles = {
   }
 };
 
+function makeInventoryRequest(setInventory) {
+  Http.get("/inventories").then(res => {
+    var arr = [];
+
+    Object.keys(res["data"]).forEach(key => {
+      var tmp = [];
+      if(res["data"][key] != null){
+        Object.keys(res["data"][key]).forEach(key2 => {
+          if(res["data"][key][key2] == null)
+            tmp.push("No disponible");
+          else
+            tmp.push(res["data"][key][key2]);
+        });
+      }
+      arr.push(tmp);
+    });
+
+    setInventory(arr);
+  }).catch(err => console.log("ERROR " + err));
+}
+
 function TableList(props) {
   const { classes } = props;
+  const [inventory, setInventory] = useState(0);
+
+  const vari = [
+    ["1", "Dakota Rice", "Niger", "Oud-Turnhout", "$36,738"],
+    ["2", "Minerva Hooper", "Curaçao", "Sinaai-Waas", "$23,789"],
+    ["3","Sage Rodriguez", "Netherlands", "Baileux", "$56,142"],
+    ["4","Philip Chaney", "Korea, South", "Overland Park", "$38,735"],
+    ["5","Doris Greene", "Malawi", "Feldkirchen in Kärnten", "$63,542"],
+    ["6","Mason Porter", "Chile", "Gloucester", "$78,615"]
+  ];
+
+  if(inventory == null || inventory == undefined || inventory == 0){
+    makeInventoryRequest(setInventory);
+    setInventory(vari);
+  }
+  
+  //console.log(inventory);
+  //console.log(vari);
+
   return (
     <GridContainer>
       <GridItem xs={12} sm={12} md={12}>
         <Card>
           <CardHeader color="primary">
-            <h4 className={classes.cardTitleWhite}>Simple Table</h4>
+            <h4 className={classes.cardTitleWhite}>Inventario</h4>
             <p className={classes.cardCategoryWhite}>
-              Here is a subtitle for this table
+              Aquí encontrará el inventario en bodega que ha sido registrado.
             </p>
           </CardHeader>
           <CardBody>
             <Table
               tableHeaderColor="primary"
-              tableHead={["Name", "Country", "City", "Salary"]}
-              tableData={[
-                ["Dakota Rice", "Niger", "Oud-Turnhout", "$36,738"],
-                ["Minerva Hooper", "Curaçao", "Sinaai-Waas", "$23,789"],
-                ["Sage Rodriguez", "Netherlands", "Baileux", "$56,142"],
-                ["Philip Chaney", "Korea, South", "Overland Park", "$38,735"],
-                ["Doris Greene", "Malawi", "Feldkirchen in Kärnten", "$63,542"],
-                ["Mason Porter", "Chile", "Gloucester", "$78,615"]
-              ]}
+              tableHead={["id", "Producto", "Cantidad", "Costo minorista", "Costo"]}
+              tableData={inventory}
             />
           </CardBody>
         </Card>
       </GridItem>
-      <GridItem xs={12} sm={12} md={12}>
-        <Card plain>
-          <CardHeader plain color="primary">
-            <h4 className={classes.cardTitleWhite}>
-              Table on Plain Background
-            </h4>
-            <p className={classes.cardCategoryWhite}>
-              Here is a subtitle for this table
-            </p>
-          </CardHeader>
-          <CardBody>
-            <Table
-              tableHeaderColor="primary"
-              tableHead={["ID", "Name", "Country", "City", "Salary"]}
-              tableData={[
-                ["1", "Dakota Rice", "$36,738", "Niger", "Oud-Turnhout"],
-                ["2", "Minerva Hooper", "$23,789", "Curaçao", "Sinaai-Waas"],
-                ["3", "Sage Rodriguez", "$56,142", "Netherlands", "Baileux"],
-                [
-                  "4",
-                  "Philip Chaney",
-                  "$38,735",
-                  "Korea, South",
-                  "Overland Park"
-                ],
-                [
-                  "5",
-                  "Doris Greene",
-                  "$63,542",
-                  "Malawi",
-                  "Feldkirchen in Kärnten"
-                ],
-                ["6", "Mason Porter", "$78,615", "Chile", "Gloucester"]
-              ]}
-            />
-          </CardBody>
-        </Card>
-      </GridItem>
-    </GridContainer>
+      
+      </GridContainer>
   );
 }
 
