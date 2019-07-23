@@ -1,8 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-<<<<<<< HEAD
-  resources :clients, :products
-=======
+  resources :products
   resources :raw_materials do
     member do
       put 'raw_materials_discount'
@@ -10,6 +8,7 @@ Rails.application.routes.draw do
 
     collection do
     get 'get_history', to: :get_history
+    get 'get_expenses', to: :get_expenses
   end
   end
   resources :clients do
@@ -18,5 +17,4 @@ Rails.application.routes.draw do
   end
   end
   
->>>>>>> origin/develop
 end

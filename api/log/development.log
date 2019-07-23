@@ -2904,3 +2904,412 @@ Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.4ms)
 >>>>>>> 9eb667afc33917cca78841f968928fe7946e9035
 
 
+Started GET "/" for ::1 at 2019-07-23 08:23:00 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/cristhiancamilogomezneira/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/cristhiancamilogomezneira/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.9ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:26:55 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.9ms)[0m  [1m[34m
+      SELECT cost, DATE_FORMAT(arrived_at, '%Y%m')
+      FROM clients_raw_materials
+      GROUP BY DATE_FORMAT(arrived_at, '%Y%m')[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such function: DATE_FORMAT: 
+      SELECT cost, DATE_FORMAT(arrived_at, '%Y%m')
+      FROM clients_raw_materials
+      GROUP BY DATE_FORMAT(arrived_at, '%Y%m')):
+  
+app/controllers/raw_materials_controller.rb:46:in `get_expenses'
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:27:33 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.5ms)[0m  [1m[34m
+      SELECT cost, DATE_FORMAT(arrived_at, '%Y%m') AS date
+      FROM clients_raw_materials
+      GROUP BY DATE_FORMAT(arrived_at, '%Y%m')[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such function: DATE_FORMAT: 
+      SELECT cost, DATE_FORMAT(arrived_at, '%Y%m') AS date
+      FROM clients_raw_materials
+      GROUP BY DATE_FORMAT(arrived_at, '%Y%m')):
+  
+app/controllers/raw_materials_controller.rb:46:in `get_expenses'
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:28:49 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (4.8ms)[0m  [1m[34m
+      SELECT cost, DATE_FORMAT(arrived_at, '%Y%m') AS date
+      FROM clients_raw_materials
+      GROUP BY DATE_FORMAT(arrived_at, '%Y%m')[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 4.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such function: DATE_FORMAT: 
+      SELECT cost, DATE_FORMAT(arrived_at, '%Y%m') AS date
+      FROM clients_raw_materials
+      GROUP BY DATE_FORMAT(arrived_at, '%Y%m')):
+  
+app/controllers/raw_materials_controller.rb:46:in `get_expenses'
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:29:26 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (2.0ms)[0m  [1m[34m
+      SELECT cost, DATE_FORMAT(arrived_at, '%Y%m') AS date
+      FROM clients_raw_materials
+      GROUP BY DATE_FORMAT(arrived_at, '%Y%m')[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 2.0ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such function: DATE_FORMAT: 
+      SELECT cost, DATE_FORMAT(arrived_at, '%Y%m') AS date
+      FROM clients_raw_materials
+      GROUP BY DATE_FORMAT(arrived_at, '%Y%m')):
+  
+app/controllers/raw_materials_controller.rb:46:in `get_expenses'
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:29:43 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.3ms)[0m  [1m[34m
+      SELECT cost, DATE_FORMAT(arrived_at, '%Y%m') AS date
+      FROM clients_raw_materials
+      GROUP BY DATE_FORMAT(arrived_at, '%Y%m')[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such function: DATE_FORMAT: 
+      SELECT cost, DATE_FORMAT(arrived_at, '%Y%m') AS date
+      FROM clients_raw_materials
+      GROUP BY DATE_FORMAT(arrived_at, '%Y%m')):
+  
+app/controllers/raw_materials_controller.rb:46:in `get_expenses'
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:30:41 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.8ms)[0m  [1m[34m
+      SELECT cost, EXTRACT(YEAR_MONTH FROM arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY EXTRACT(YEAR_MONTH FROM arrived_at)[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near "FROM": syntax error: 
+      SELECT cost, EXTRACT(YEAR_MONTH FROM arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY EXTRACT(YEAR_MONTH FROM arrived_at)):
+  
+app/controllers/raw_materials_controller.rb:46:in `get_expenses'
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:30:50 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.5ms)[0m  [1m[34m
+      SELECT cost, EXTRACT(YEAR_MONTH FROM arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY EXTRACT(YEAR_MONTH FROM arrived_at)[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near "FROM": syntax error: 
+      SELECT cost, EXTRACT(YEAR_MONTH FROM arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY EXTRACT(YEAR_MONTH FROM arrived_at)):
+  
+app/controllers/raw_materials_controller.rb:46:in `get_expenses'
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:32:12 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.4ms)[0m  [1m[34m
+      SELECT cost, EXTRACT(YEAR_MONTH FROM arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY date;[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near "FROM": syntax error: 
+      SELECT cost, EXTRACT(YEAR_MONTH FROM arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY date;):
+  
+app/controllers/raw_materials_controller.rb:46:in `get_expenses'
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:33:15 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.5ms)[0m  [1m[34m
+      SELECT cost, YEAR(arrived_at) as yr, MONTH(arrived_at) AS mn
+      FROM clients_raw_materials
+      GROUP BY YEAR(arrived_at), MONTH(arrived_at);[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such function: YEAR: 
+      SELECT cost, YEAR(arrived_at) as yr, MONTH(arrived_at) AS mn
+      FROM clients_raw_materials
+      GROUP BY YEAR(arrived_at), MONTH(arrived_at);):
+  
+app/controllers/raw_materials_controller.rb:46:in `get_expenses'
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:34:34 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (2.6ms)[0m  [1m[34m
+      SELECT cost, strfttime('%y/%m', arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY strfttime('%y/%m', arrived_at);[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 2.6ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such function: strfttime: 
+      SELECT cost, strfttime('%y/%m', arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY strfttime('%y/%m', arrived_at);):
+  
+app/controllers/raw_materials_controller.rb:46:in `get_expenses'
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:35:41 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (2.7ms)[0m  [1m[34m
+      SELECT cost, arrived_at AS date
+      FROM clients_raw_materials
+      GROUP BY arrived_at;[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 500 Internal Server Error in 735ms (ActiveRecord: 5.0ms)
+
+
+  
+NameError (undefined local variable or method `data' for #<RawMaterialsController:0x00007ff2bc858de0>):
+  
+app/controllers/raw_materials_controller.rb:50:in `get_expenses'
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:35:57 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.7ms)[0m  [1m[34m
+      SELECT cost, arrived_at AS date
+      FROM clients_raw_materials
+      GROUP BY arrived_at;[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 200 OK in 32ms (Views: 3.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:37:35 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (2.5ms)[0m  [1m[34m
+      SELECT cost, date(arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY date(arrived_at);[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 200 OK in 35ms (Views: 1.3ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:38:09 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (18.4ms)[0m  [1m[34m
+      SELECT cost, date(arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY date(arrived_at);[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 200 OK in 56ms (Views: 5.6ms | ActiveRecord: 18.4ms)
+
+
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:38:09 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.4ms)[0m  [1m[34m
+      SELECT cost, date(arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY date(arrived_at);[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:39:53 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (2.7ms)[0m  [1m[34m
+      SELECT cost, date(arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY date(arrived_at);[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 200 OK in 27ms (Views: 5.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/raw_materias" for ::1 at 2019-07-23 08:39:53 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/raw_materias"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:39:54 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (3.2ms)[0m  [1m[34m
+      SELECT cost, date(arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY date(arrived_at);[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/raw_materias" for ::1 at 2019-07-23 08:39:54 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/raw_materias"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:40:04 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.3ms)[0m  [1m[34m
+      SELECT cost, date(arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY date(arrived_at);[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/raw_materias" for ::1 at 2019-07-23 08:40:04 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/raw_materias"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:40:23 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.3ms)[0m  [1m[34m
+      SELECT cost, date(arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY date(arrived_at);[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/raw_materials" for ::1 at 2019-07-23 08:40:24 -0500
+Processing by RawMaterialsController#index as HTML
+  [1m[36mRawMaterial Load (0.8ms)[0m  [1m[34mSELECT "raw_materials".* FROM "raw_materials"[0m
+  ↳ app/controllers/raw_materials_controller.rb:6
+Completed 200 OK in 25ms (Views: 15.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:40:24 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.4ms)[0m  [1m[34m
+      SELECT cost, date(arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY date(arrived_at);[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/raw_materials" for ::1 at 2019-07-23 08:40:25 -0500
+Processing by RawMaterialsController#index as HTML
+  [1m[36mRawMaterial Load (0.2ms)[0m  [1m[34mSELECT "raw_materials".* FROM "raw_materials"[0m
+  ↳ app/controllers/raw_materials_controller.rb:6
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:41:04 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.4ms)[0m  [1m[34m
+      SELECT cost, date(arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY date(arrived_at);[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:41:05 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.5ms)[0m  [1m[34m
+      SELECT cost, date(arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY date(arrived_at);[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 200 OK in 28ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/raw_materials" for ::1 at 2019-07-23 08:41:05 -0500
+Processing by RawMaterialsController#index as HTML
+  [1m[36mRawMaterial Load (0.4ms)[0m  [1m[34mSELECT "raw_materials".* FROM "raw_materials"[0m
+  ↳ app/controllers/raw_materials_controller.rb:6
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/raw_materials" for ::1 at 2019-07-23 08:41:05 -0500
+Processing by RawMaterialsController#index as HTML
+  [1m[36mRawMaterial Load (0.5ms)[0m  [1m[34mSELECT "raw_materials".* FROM "raw_materials"[0m
+  ↳ app/controllers/raw_materials_controller.rb:6
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.5ms)
+
+
