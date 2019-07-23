@@ -2737,6 +2737,107 @@ Processing by ClientsController#show_suppliers as HTML
 Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/clients" for ::1 at 2019-07-23 01:20:29 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ClientsController#index as HTML
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/controllers/clients_controller.rb:3
+Completed 200 OK in 15ms (Views: 12.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/clients" for ::1 at 2019-07-23 05:39:58 -0500
+Processing by ClientsController#index as HTML
+  [1m[36mClient Load (1.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/controllers/clients_controller.rb:3
+Completed 200 OK in 15ms (Views: 10.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/clients/show_suppliers" for ::1 at 2019-07-23 05:40:00 -0500
+Processing by ClientsController#show_suppliers as HTML
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "PROOVEDORES"]]
+  ↳ app/controllers/clients_controller.rb:26
+Completed 200 OK in 19ms (Views: 14.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/clients/show_suppliers" for ::1 at 2019-07-23 05:40:26 -0500
+Processing by ClientsController#show_suppliers as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "PROOVEDORES"]]
+  ↳ app/controllers/clients_controller.rb:26
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/clients" for ::1 at 2019-07-23 05:40:27 -0500
+Processing by ClientsController#index as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/controllers/clients_controller.rb:3
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/clients/show_suppliers" for ::1 at 2019-07-23 05:40:28 -0500
+Processing by ClientsController#show_suppliers as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "PROOVEDORES"]]
+  ↳ app/controllers/clients_controller.rb:26
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/clients/show_suppliers" for ::1 at 2019-07-23 05:40:51 -0500
+Processing by ClientsController#show_suppliers as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "PROOVEDORES"]]
+  ↳ app/controllers/clients_controller.rb:26
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/clients" for ::1 at 2019-07-23 05:41:09 -0500
+Processing by ClientsController#create as HTML
+  Parameters: {"client"=>{"name"=>"adsf", "phone"=>"", "address"=>"asdfsd", "client_type"=>"SATELITES"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_controller.rb:7
+  [1m[36mClient Create (2.2ms)[0m  [1m[32mINSERT INTO "clients" ("name", "phone", "address", "client_type") VALUES (?, ?, ?, ?)[0m  [["name", "adsf"], ["phone", ""], ["address", "asdfsd"], ["client_type", "SATELITES"]]
+  ↳ app/controllers/clients_controller.rb:7
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/clients_controller.rb:7
+Completed 204 No Content in 11ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/clients" for ::1 at 2019-07-23 05:41:09 -0500
+Processing by ClientsController#index as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/controllers/clients_controller.rb:3
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/clients/show_suppliers" for ::1 at 2019-07-23 05:41:16 -0500
+Processing by ClientsController#show_suppliers as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "PROOVEDORES"]]
+  ↳ app/controllers/clients_controller.rb:26
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/clients/show_suppliers" for ::1 at 2019-07-23 05:41:40 -0500
+Processing by ClientsController#show_suppliers as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "PROOVEDORES"]]
+  ↳ app/controllers/clients_controller.rb:26
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/clients" for ::1 at 2019-07-23 05:41:46 -0500
+Processing by ClientsController#create as HTML
+  Parameters: {"client"=>{"name"=>"asdf", "phone"=>"123412", "address"=>"asdfasd", "client_type"=>"REGULARES"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_controller.rb:7
+  [1m[36mClient Create (0.9ms)[0m  [1m[32mINSERT INTO "clients" ("name", "phone", "address", "client_type") VALUES (?, ?, ?, ?)[0m  [["name", "asdf"], ["phone", "123412"], ["address", "asdfasd"], ["client_type", "REGULARES"]]
+  ↳ app/controllers/clients_controller.rb:7
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/clients_controller.rb:7
+Completed 204 No Content in 6ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/clients" for ::1 at 2019-07-23 05:41:46 -0500
+Processing by ClientsController#index as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/controllers/clients_controller.rb:3
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.2ms)
 Started GET "/clients" for ::1 at 2019-07-23 02:21:40 -0500
   [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /home/fabiotovar/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
@@ -14684,3 +14785,1004 @@ Processing by InventoriesController#index as HTML
 Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms)
 
 
+Started GET "/inventories" for ::1 at 2019-07-23 09:06:31 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/fabiotovar/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.7ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:3
+Completed 200 OK in 27ms (Views: 15.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/clients" for ::1 at 2019-07-23 09:06:36 -0500
+Processing by ClientsController#index as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/controllers/clients_controller.rb:3
+Completed 200 OK in 7ms (Views: 5.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/clients/show_suppliers" for ::1 at 2019-07-23 09:06:38 -0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"show_suppliers"}
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:11
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Client with 'id'=show_suppliers):
+  
+app/controllers/clients_controller.rb:11:in `show'
+Started GET "/raw_materials" for ::1 at 2019-07-23 09:06:43 -0500
+Processing by RawMaterialsController#index as HTML
+  [1m[36mRawMaterial Load (0.2ms)[0m  [1m[34mSELECT "raw_materials".* FROM "raw_materials"[0m
+  ↳ app/controllers/raw_materials_controller.rb:6
+Completed 200 OK in 8ms (Views: 5.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/raw_materials/get_history" for ::1 at 2019-07-23 09:06:43 -0500
+Processing by RawMaterialsController#get_history as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34m
+      SELECT clients.name AS cname, raw_materials.name, clients_raw_materials.cost, clients_raw_materials.arrived_at FROM
+      clients
+      INNER JOIN clients_raw_materials ON clients.id = clients_raw_materials.client_id
+      INNER JOIN raw_materials ON clients_raw_materials.raw_material_id = raw_materials.id
+    [0m
+  ↳ app/controllers/raw_materials_controller.rb:35
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/clients/show_suppliers" for ::1 at 2019-07-23 09:06:45 -0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"show_suppliers"}
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:11
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Client with 'id'=show_suppliers):
+  
+app/controllers/clients_controller.rb:11:in `show'
+Started GET "/raw_materials" for ::1 at 2019-07-23 09:06:46 -0500
+Processing by RawMaterialsController#index as HTML
+  [1m[36mRawMaterial Load (0.2ms)[0m  [1m[34mSELECT "raw_materials".* FROM "raw_materials"[0m
+  ↳ app/controllers/raw_materials_controller.rb:6
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/raw_materials/get_history" for ::1 at 2019-07-23 09:06:46 -0500
+Processing by RawMaterialsController#get_history as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34m
+      SELECT clients.name AS cname, raw_materials.name, clients_raw_materials.cost, clients_raw_materials.arrived_at FROM
+      clients
+      INNER JOIN clients_raw_materials ON clients.id = clients_raw_materials.client_id
+      INNER JOIN raw_materials ON clients_raw_materials.raw_material_id = raw_materials.id
+    [0m
+  ↳ app/controllers/raw_materials_controller.rb:35
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/clients/show_suppliers" for ::1 at 2019-07-23 09:06:48 -0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"show_suppliers"}
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:11
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Client with 'id'=show_suppliers):
+  
+app/controllers/clients_controller.rb:11:in `show'
+Started GET "/raw_materials" for ::1 at 2019-07-23 09:06:49 -0500
+Processing by RawMaterialsController#index as HTML
+  [1m[36mRawMaterial Load (0.1ms)[0m  [1m[34mSELECT "raw_materials".* FROM "raw_materials"[0m
+  ↳ app/controllers/raw_materials_controller.rb:6
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/raw_materials/get_history" for ::1 at 2019-07-23 09:06:49 -0500
+Processing by RawMaterialsController#get_history as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34m
+      SELECT clients.name AS cname, raw_materials.name, clients_raw_materials.cost, clients_raw_materials.arrived_at FROM
+      clients
+      INNER JOIN clients_raw_materials ON clients.id = clients_raw_materials.client_id
+      INNER JOIN raw_materials ON clients_raw_materials.raw_material_id = raw_materials.id
+    [0m
+  ↳ app/controllers/raw_materials_controller.rb:35
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/clients/show_suppliers" for ::1 at 2019-07-23 09:06:50 -0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"show_suppliers"}
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:11
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Client with 'id'=show_suppliers):
+  
+app/controllers/clients_controller.rb:11:in `show'
+Started GET "/raw_materials" for ::1 at 2019-07-23 09:06:54 -0500
+Processing by RawMaterialsController#index as HTML
+  [1m[36mRawMaterial Load (0.1ms)[0m  [1m[34mSELECT "raw_materials".* FROM "raw_materials"[0m
+  ↳ app/controllers/raw_materials_controller.rb:6
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/raw_materials/get_history" for ::1 at 2019-07-23 09:06:54 -0500
+Processing by RawMaterialsController#get_history as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34m
+      SELECT clients.name AS cname, raw_materials.name, clients_raw_materials.cost, clients_raw_materials.arrived_at FROM
+      clients
+      INNER JOIN clients_raw_materials ON clients.id = clients_raw_materials.client_id
+      INNER JOIN raw_materials ON clients_raw_materials.raw_material_id = raw_materials.id
+    [0m
+  ↳ app/controllers/raw_materials_controller.rb:35
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:06:55 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:3
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/raw_materials" for ::1 at 2019-07-23 09:06:56 -0500
+Processing by RawMaterialsController#index as HTML
+  [1m[36mRawMaterial Load (0.2ms)[0m  [1m[34mSELECT "raw_materials".* FROM "raw_materials"[0m
+  ↳ app/controllers/raw_materials_controller.rb:6
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/raw_materials/get_history" for ::1 at 2019-07-23 09:06:56 -0500
+Processing by RawMaterialsController#get_history as HTML
+  [1m[36mClient Load (0.3ms)[0m  [1m[34m
+      SELECT clients.name AS cname, raw_materials.name, clients_raw_materials.cost, clients_raw_materials.arrived_at FROM
+      clients
+      INNER JOIN clients_raw_materials ON clients.id = clients_raw_materials.client_id
+      INNER JOIN raw_materials ON clients_raw_materials.raw_material_id = raw_materials.id
+    [0m
+  ↳ app/controllers/raw_materials_controller.rb:35
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mInventory Load (17.3ms)[0m  [1m[34mSELECT  "inventories".* FROM "inventories" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT  "products".* FROM "products" ORDER BY "products"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/clients" for ::1 at 2019-07-23 09:12:24 -0500
+Processing by ClientsController#index as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/controllers/clients_controller.rb:3
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:12:30 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.2ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:3
+Completed 200 OK in 15ms (Views: 12.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/clients" for ::1 at 2019-07-23 09:12:31 -0500
+Processing by ClientsController#index as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/controllers/clients_controller.rb:3
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:12:34 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.3ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:3
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:12:37 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:3
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:13:36 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:15:31 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:15:53 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:16:09 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:16:18 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:16:34 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:17:09 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.2ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:18:17 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (1.7ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:18:38 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:18:54 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:24:15 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:24:16 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:24:17 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:24:19 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:24:20 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:24:21 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:24:56 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:25:33 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:25:33 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:25:54 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.2ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:25:54 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.2ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:26:00 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (2.0ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:26:03 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:26:25 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:26:25 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:26:33 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:26:34 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:26:55 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:27:26 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:33:41 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.5ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 4ms (Views: 1.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:33:51 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:34:05 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:34:37 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:35:39 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:36:26 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.2ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:36:43 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:36:52 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:39:05 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/raw_materials" for ::1 at 2019-07-23 09:40:46 -0500
+Processing by RawMaterialsController#index as HTML
+  [1m[36mRawMaterial Load (1.2ms)[0m  [1m[34mSELECT "raw_materials".* FROM "raw_materials"[0m
+  ↳ app/controllers/raw_materials_controller.rb:6
+Completed 200 OK in 24ms (Views: 12.4ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/raw_materials/get_history" for ::1 at 2019-07-23 09:40:46 -0500
+Processing by RawMaterialsController#get_history as HTML
+  [1m[36mClient Load (0.7ms)[0m  [1m[34m
+      SELECT clients.name AS cname, raw_materials.name, clients_raw_materials.cost, clients_raw_materials.arrived_at FROM
+      clients
+      INNER JOIN clients_raw_materials ON clients.id = clients_raw_materials.client_id
+      INNER JOIN raw_materials ON clients_raw_materials.raw_material_id = raw_materials.id
+    [0m
+  ↳ app/controllers/raw_materials_controller.rb:35
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/clients/show_suppliers" for ::1 at 2019-07-23 09:40:52 -0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"show_suppliers"}
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:11
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Client with 'id'=show_suppliers):
+  
+app/controllers/clients_controller.rb:11:in `show'
+Started GET "/clients" for ::1 at 2019-07-23 09:40:54 -0500
+Processing by ClientsController#index as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/controllers/clients_controller.rb:3
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:41:01 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/clients" for ::1 at 2019-07-23 09:41:13 -0500
+Processing by ClientsController#index as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/controllers/clients_controller.rb:3
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/raw_materials" for ::1 at 2019-07-23 09:41:16 -0500
+Processing by RawMaterialsController#index as HTML
+  [1m[36mRawMaterial Load (0.1ms)[0m  [1m[34mSELECT "raw_materials".* FROM "raw_materials"[0m
+  ↳ app/controllers/raw_materials_controller.rb:6
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/raw_materials/get_history" for ::1 at 2019-07-23 09:41:16 -0500
+Processing by RawMaterialsController#get_history as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34m
+      SELECT clients.name AS cname, raw_materials.name, clients_raw_materials.cost, clients_raw_materials.arrived_at FROM
+      clients
+      INNER JOIN clients_raw_materials ON clients.id = clients_raw_materials.client_id
+      INNER JOIN raw_materials ON clients_raw_materials.raw_material_id = raw_materials.id
+    [0m
+  ↳ app/controllers/raw_materials_controller.rb:35
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/clients/show_suppliers" for ::1 at 2019-07-23 09:41:21 -0500
+Processing by ClientsController#show as HTML
+  Parameters: {"id"=>"show_suppliers"}
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT  "clients".* FROM "clients" WHERE "clients"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/clients_controller.rb:11
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Client with 'id'=show_suppliers):
+  
+app/controllers/clients_controller.rb:11:in `show'
+Started GET "/inventories" for ::1 at 2019-07-23 09:41:31 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.2ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:42:07 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:42:16 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:42:18 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:42:21 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:42:32 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:43:05 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:43:11 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:4
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/inventories" for ::1 at 2019-07-23 09:48:34 -0500
+Processing by InventoriesController#create as HTML
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: Inventory):
+  
+app/controllers/inventories_controller.rb:29:in `get_params'
+app/controllers/inventories_controller.rb:9:in `create'
+Started GET "/inventories" for ::1 at 2019-07-23 09:55:28 -0500
+  
+SyntaxError (/home/fabiotovar/Proyectos/InformationSystems/api/app/controllers/inventories_controller.rb:11: syntax error, unexpected '\n', expecting =>):
+  
+app/controllers/inventories_controller.rb:11: syntax error, unexpected '\n', expecting =>
+Started GET "/inventories" for ::1 at 2019-07-23 09:55:52 -0500
+  
+SyntaxError (/home/fabiotovar/Proyectos/InformationSystems/api/app/controllers/inventories_controller.rb:10: syntax error, unexpected '\n', expecting =>):
+  
+app/controllers/inventories_controller.rb:10: syntax error, unexpected '\n', expecting =>
+Started GET "/inventories" for ::1 at 2019-07-23 09:56:20 -0500
+  
+SyntaxError (/home/fabiotovar/Proyectos/InformationSystems/api/app/controllers/inventories_controller.rb:10: syntax error, unexpected ')', expecting =>
+...etailer_cost, :wholesale_cost))
+...                              ^):
+  
+app/controllers/inventories_controller.rb:10: syntax error, unexpected ')', expecting =>
+Started GET "/inventories" for ::1 at 2019-07-23 09:56:32 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.5ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:3
+Completed 200 OK in 19ms (Views: 7.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:57:04 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.3ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:3
+Completed 200 OK in 19ms (Views: 15.8ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/inventories" for ::1 at 2019-07-23 09:57:16 -0500
+Processing by InventoriesController#create as HTML
+  Parameters: {"name"=>"Chaqueta negra", "quantity"=>"2", "retailer_cost"=>"2000", "wholesale_cost"=>"10000", "inventory"=>{"quantity"=>"2", "retailer_cost"=>"2000", "wholesale_cost"=>"10000"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:14
+  [1m[36mInventory Create (27.7ms)[0m  [1m[32mINSERT INTO "inventories" ("quantity", "retailer_cost", "wholesale_cost") VALUES (?, ?, ?)[0m  [["quantity", 2], ["retailer_cost", 2000.0], ["wholesale_cost", 10000.0]]
+  ↳ app/controllers/inventories_controller.rb:14
+  [1m[35m (12.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:14
+Completed 204 No Content in 45ms (ActiveRecord: 40.4ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:57:20 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:3
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/inventories" for ::1 at 2019-07-23 09:58:22 -0500
+Processing by InventoriesController#create as HTML
+  Parameters: {"name"=>"Chaqueta de cuero", "quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000", "inventory"=>{"quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:17
+  [1m[36mInventory Create (0.4ms)[0m  [1m[32mINSERT INTO "inventories" ("quantity", "retailer_cost", "wholesale_cost") VALUES (?, ?, ?)[0m  [["quantity", 2000], ["retailer_cost", 10000.0], ["wholesale_cost", 50000.0]]
+  ↳ app/controllers/inventories_controller.rb:17
+  [1m[35m (15.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:17
+Completed 204 No Content in 24ms (ActiveRecord: 16.3ms)
+
+
+Started POST "/inventories" for ::1 at 2019-07-23 09:59:41 -0500
+Processing by InventoriesController#create as HTML
+  Parameters: {"name"=>"Chaqueta de cuero", "quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000", "inventory"=>{"quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000"}}
+Completed 204 No Content in 1ms (ActiveRecord: 0.4ms)
+
+
+Started POST "/inventories" for ::1 at 2019-07-23 09:59:56 -0500
+Processing by InventoriesController#create as HTML
+  Parameters: {"name"=>"Chaqueta de cuero", "quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000", "inventory"=>{"quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000"}}
+Completed 204 No Content in 1ms (ActiveRecord: 1.1ms)
+
+
+Started POST "/inventories" for ::1 at 2019-07-23 10:00:13 -0500
+Processing by InventoriesController#create as HTML
+  Parameters: {"name"=>"Chaqueta de cuero", "quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000", "inventory"=>{"quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:11
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" DEFAULT VALUES[0m
+  ↳ app/controllers/inventories_controller.rb:11
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/inventories_controller.rb:11
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.4ms)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: products.name: INSERT INTO "products" DEFAULT VALUES):
+  
+app/controllers/inventories_controller.rb:11:in `create'
+Started POST "/inventories" for ::1 at 2019-07-23 10:00:39 -0500
+Processing by InventoriesController#create as HTML
+  Parameters: {"name"=>"Chaqueta de cuero", "quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000", "inventory"=>{"quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name") VALUES (?)[0m  [["name", "Chaqueta de cuero"]]
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[35m (14.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:9
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 15.5ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/inventories_controller.rb:11:in `[]='
+app/controllers/inventories_controller.rb:11:in `create'
+Started POST "/inventories" for ::1 at 2019-07-23 10:00:39 -0500
+Processing by InventoriesController#create as HTML
+  Parameters: {"name"=>"Chaqueta de cuero", "quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000", "inventory"=>{"quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000"}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[36mProduct Create (1.4ms)[0m  [1m[32mINSERT INTO "products" ("name") VALUES (?)[0m  [["name", "Chaqueta de cuero"]]
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[35m (13.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:9
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 14.6ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/inventories_controller.rb:11:in `[]='
+app/controllers/inventories_controller.rb:11:in `create'
+Started POST "/inventories" for ::1 at 2019-07-23 10:01:20 -0500
+Processing by InventoriesController#create as HTML
+  Parameters: {"name"=>"Chaqueta de cuero", "quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000", "inventory"=>{"quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name") VALUES (?)[0m  [["name", "Chaqueta de cuero"]]
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[35m (13.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:9
+Completed 204 No Content in 23ms (ActiveRecord: 14.3ms)
+
+
+Started POST "/inventories" for ::1 at 2019-07-23 10:01:39 -0500
+Processing by InventoriesController#create as HTML
+  Parameters: {"name"=>"Chaqueta de cuero", "quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000", "inventory"=>{"quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name") VALUES (?)[0m  [["name", "Chaqueta de cuero"]]
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[35m (11.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:9
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 12.7ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/inventories_controller.rb:11:in `[]='
+app/controllers/inventories_controller.rb:11:in `create'
+Started POST "/inventories" for ::1 at 2019-07-23 10:01:48 -0500
+Processing by InventoriesController#create as HTML
+  Parameters: {"name"=>"Chaqueta de cuero", "quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000", "inventory"=>{"quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name") VALUES (?)[0m  [["name", "Chaqueta de cuero"]]
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[35m (14.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:9
+Completed 204 No Content in 22ms (ActiveRecord: 15.7ms)
+
+
+Started POST "/inventories" for ::1 at 2019-07-23 10:02:54 -0500
+Processing by InventoriesController#create as HTML
+  Parameters: {"name"=>"Chaqueta de cuero", "quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000", "inventory"=>{"quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name") VALUES (?)[0m  [["name", "Chaqueta de cuero"]]
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[35m (10.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:9
+Completed 204 No Content in 22ms (ActiveRecord: 12.9ms)
+
+
+Started POST "/inventories" for ::1 at 2019-07-23 10:03:05 -0500
+Processing by InventoriesController#create as HTML
+  Parameters: {"name"=>"Chaqueta de cuero", "quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000", "inventory"=>{"quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name") VALUES (?)[0m  [["name", "Chaqueta de cuero"]]
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[35m (13.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:9
+Completed 204 No Content in 20ms (ActiveRecord: 14.6ms)
+
+
+Started POST "/inventories" for ::1 at 2019-07-23 10:03:17 -0500
+Processing by InventoriesController#create as HTML
+  Parameters: {"name"=>"Chaqueta de cuero", "quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000", "inventory"=>{"quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name") VALUES (?)[0m  [["name", "Chaqueta de cuero"]]
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[35m (12.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:9
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 13.8ms)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/inventories_controller.rb:11:in `[]='
+app/controllers/inventories_controller.rb:11:in `create'
+Started POST "/inventories" for ::1 at 2019-07-23 10:04:04 -0500
+Processing by InventoriesController#create as HTML
+  Parameters: {"name"=>"Chaqueta de cuero", "quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000", "inventory"=>{"quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name") VALUES (?)[0m  [["name", "Chaqueta de cuero"]]
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[35m (15.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:9
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 16.8ms)
+
+
+  
+TypeError (no implicit conversion of String into Integer):
+  
+app/controllers/inventories_controller.rb:11:in `[]='
+app/controllers/inventories_controller.rb:11:in `create'
+Started POST "/inventories" for ::1 at 2019-07-23 10:05:18 -0500
+Processing by InventoriesController#create as HTML
+  Parameters: {"name"=>"Chaqueta de cuero", "quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000", "inventory"=>{"quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[36mProduct Create (0.2ms)[0m  [1m[32mINSERT INTO "products" ("name") VALUES (?)[0m  [["name", "Chaqueta de cuero"]]
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[35m (13.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:9
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 14.5ms)
+
+
+  
+NoMethodError (undefined method `merge' for ["2000", "10000", "50000"]:Array):
+  
+app/controllers/inventories_controller.rb:11:in `create'
+Started POST "/inventories" for ::1 at 2019-07-23 10:05:41 -0500
+Processing by InventoriesController#create as HTML
+  Parameters: {"name"=>"Chaqueta de cuero", "quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000", "inventory"=>{"quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000"}}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[36mProduct Create (1.0ms)[0m  [1m[32mINSERT INTO "products" ("name") VALUES (?)[0m  [["name", "Chaqueta de cuero"]]
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[35m (15.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:9
+Completed 204 No Content in 43ms (ActiveRecord: 19.5ms)
+
+
+Started POST "/inventories" for ::1 at 2019-07-23 10:05:51 -0500
+Processing by InventoriesController#create as HTML
+  Parameters: {"name"=>"Chaqueta de cuero", "quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000", "inventory"=>{"quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name") VALUES (?)[0m  [["name", "Chaqueta de cuero"]]
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[35m (14.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:9
+Completed 204 No Content in 24ms (ActiveRecord: 15.3ms)
+
+
+Started POST "/inventories" for ::1 at 2019-07-23 10:06:09 -0500
+Processing by InventoriesController#create as HTML
+  Parameters: {"name"=>"Chaqueta de cuero", "quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000", "inventory"=>{"quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name") VALUES (?)[0m  [["name", "Chaqueta de cuero"]]
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[35m (10.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:9
+Completed 204 No Content in 18ms (ActiveRecord: 12.0ms)
+
+
+Started POST "/inventories" for ::1 at 2019-07-23 10:06:22 -0500
+Processing by InventoriesController#create as HTML
+  Parameters: {"name"=>"Chaqueta de cuero", "quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000", "inventory"=>{"quantity"=>"2000", "retailer_cost"=>"10000", "wholesale_cost"=>"50000"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name") VALUES (?)[0m  [["name", "Chaqueta de cuero"]]
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[35m (11.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:11
+  [1m[36mInventory Create (0.3ms)[0m  [1m[32mINSERT INTO "inventories" ("product_id", "quantity", "retailer_cost", "wholesale_cost") VALUES (?, ?, ?, ?)[0m  [["product_id", 15], ["quantity", 2000], ["retailer_cost", 10000.0], ["wholesale_cost", 50000.0]]
+  ↳ app/controllers/inventories_controller.rb:11
+  [1m[35m (11.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:11
+Completed 204 No Content in 46ms (ActiveRecord: 24.3ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 10:06:27 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.2ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:3
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 10:06:29 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:3
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 10:07:25 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.2ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:3
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/inventories" for ::1 at 2019-07-23 10:07:53 -0500
+Processing by InventoriesController#create as HTML
+  Parameters: {"name"=>"Jean Pequeño", "quantity"=>"2000", "retailer_cost"=>"50000", "wholesale_cost"=>"40000", "inventory"=>{"quantity"=>"2000", "retailer_cost"=>"50000", "wholesale_cost"=>"40000"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name") VALUES (?)[0m  [["name", "Jean Pequeño"]]
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[35m (14.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:11
+  [1m[36mInventory Create (0.3ms)[0m  [1m[32mINSERT INTO "inventories" ("product_id", "quantity", "retailer_cost", "wholesale_cost") VALUES (?, ?, ?, ?)[0m  [["product_id", 16], ["quantity", 2000], ["retailer_cost", 50000.0], ["wholesale_cost", 40000.0]]
+  ↳ app/controllers/inventories_controller.rb:11
+  [1m[35m (14.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:11
+Completed 204 No Content in 40ms (ActiveRecord: 28.9ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 10:07:57 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.2ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:3
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/raw_materials" for ::1 at 2019-07-23 10:08:02 -0500
+Processing by RawMaterialsController#index as HTML
+  [1m[36mRawMaterial Load (0.5ms)[0m  [1m[34mSELECT "raw_materials".* FROM "raw_materials"[0m
+  ↳ app/controllers/raw_materials_controller.rb:6
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/raw_materials/get_history" for ::1 at 2019-07-23 10:08:02 -0500
+Processing by RawMaterialsController#get_history as HTML
+  [1m[36mClient Load (0.5ms)[0m  [1m[34m
+      SELECT clients.name AS cname, raw_materials.name, clients_raw_materials.cost, clients_raw_materials.arrived_at FROM
+      clients
+      INNER JOIN clients_raw_materials ON clients.id = clients_raw_materials.client_id
+      INNER JOIN raw_materials ON clients_raw_materials.raw_material_id = raw_materials.id
+    [0m
+  ↳ app/controllers/raw_materials_controller.rb:35
+Completed 200 OK in 13ms (Views: 0.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/clients" for ::1 at 2019-07-23 10:08:09 -0500
+Processing by ClientsController#index as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/controllers/clients_controller.rb:3
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.2ms)
+
+
+  [1m[36mInventory Load (0.8ms)[0m  [1m[34mSELECT  "inventories".* FROM "inventories" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT  "inventories".* FROM "inventories" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mInventory Load (0.5ms)[0m  [1m[34mSELECT  "inventories".* FROM "inventories" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT  "inventories".* FROM "inventories" ORDER BY "inventories"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."inventory_id" = ? LIMIT ?[0m  [["inventory_id", 2], ["LIMIT", 11]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."inventory_id" = ? LIMIT ?[0m  [["inventory_id", 2], ["LIMIT", 11]]
+  [1m[36mInventory Load (0.8ms)[0m  [1m[34mSELECT  "inventories".* FROM "inventories" ORDER BY "inventories"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."inventory_id" = ? LIMIT ?[0m  [["inventory_id", 6], ["LIMIT", 11]]
+  [1m[36mInventory Load (0.3ms)[0m  [1m[34mSELECT  "inventories".* FROM "inventories" ORDER BY "inventories"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT  "inventories".* FROM "inventories" ORDER BY "inventories"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."inventory_id" = ? LIMIT ?[0m  [["inventory_id", 6], ["LIMIT", 1]]
+  [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT  "inventories".* FROM "inventories" ORDER BY "inventories"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mInventory Load (0.2ms)[0m  [1m[34mSELECT  "inventories".* FROM "inventories" ORDER BY "inventories"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."inventory_id" = ? LIMIT ?[0m  [["inventory_id", 6], ["LIMIT", 1]]
+  [1m[36mInventory Load (0.2ms)[0m  [1m[34mSELECT  "inventories".* FROM "inventories" ORDER BY "inventories"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT  "inventories".* FROM "inventories" ORDER BY "inventories"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."inventory_id" = ? LIMIT ?[0m  [["inventory_id", 6], ["LIMIT", 1]]

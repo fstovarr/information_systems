@@ -4,7 +4,14 @@ class InventoriesController < ApplicationController
     end
     
     def create
-        Inventory.create(get_params)
+        pms = get_params
+        if params.key?("name")
+            product = Product.create name: params["name"]
+            pms = pms.merge({"product_id": product[:id]})
+            Inventory.create(pms)
+        else
+            Inventory.create(get_params)
+        end
     end
     
     def show
@@ -24,6 +31,6 @@ class InventoriesController < ApplicationController
     
     private
     def get_params
-        params.require(:Inventory).permit(:name, :descrption, :color, :size)
+        params.require(:inventory).permit(:product_id, :name, :quantity, :retailer_cost, :wholesale_cost)
     end    
 end

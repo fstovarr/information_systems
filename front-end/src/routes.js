@@ -13,7 +13,12 @@ import TableList from "views/TableList/TableList.jsx";
 import Typography from "views/Typography/Typography.jsx";
 import Icons from "views/Icons/Icons.jsx";
 import Maps from "views/Maps/Maps.jsx";
-
+import MateriaPrima from "views/MateriaPrima/MateriaPrima.jsx";
+import MateriaPrimaAdd from "views/MateriaPrima/MateriaPrimaAdd.jsx";
+import MateriaPrimaAdditional from "views/MateriaPrima/MateriaPrimaAdditional.jsx";
+import DiscountMateria from "views/MateriaPrima/DiscountMateria.jsx";
+import Users from "views/UserProfile/Users.jsx";
+import UsersAdd from "views/UserProfile/UsersAdd.jsx";
 const dashboardRoutes = [
   {
     path: "/dashboard",
@@ -56,12 +61,58 @@ const dashboardRoutes = [
     layout: "/admin"
   },
   {
-    path: "/maps",
-    name: "Proveedores",
+    path: "/users",
+    name: "Usuarios",
     rtlName: "خرائط",
     icon: LocationOn,
-    component: Maps,
+    component: Users,
     layout: "/admin"
+  }
+  ,
+  {
+    path: "/materia",
+    name: "Materia Prima",
+    rtlName: "خرائط",
+    icon: Notifications,
+    component: MateriaPrima,
+    layout: "/admin"
+  },
+  {
+    path: "/materia_add",
+    name: "Materia Prima",
+    rtlName: "خرائط",
+    icon: Unarchive,
+    component: MateriaPrimaAdd,
+    layout: "/admin",
+    hide: true
+  },
+  {
+    path: "/materia_additional",
+    name: "Materia Prima",
+    rtlName: "خرائط",
+    icon: Unarchive,
+    component: MateriaPrimaAdditional,
+    layout: "/admin",
+    hide: true
+  },
+  {
+    path: "/materia_minus",
+    name: "Materia Prima",
+    rtlName: "خرائط",
+    icon: Unarchive,
+    component: DiscountMateria,
+    layout: "/admin",
+    hide: true
+  },
+  ,
+  {
+    path: "/users_add",
+    name: "Usuarios",
+    rtlName: "خرائط",
+    icon: Unarchive,
+    component: UsersAdd,
+    layout: "/admin",
+    hide: true
   }
 ];
 
