@@ -3,9 +3,10 @@ Rails.application.routes.draw do
   resources :products
 
   resources :inventories do
-    member do
+    collection do
       put 'sell'
-      get 'get_sell'
+      get 'get_sell', to: :get_sell
+      get 'get_full'
     end
   end
 
@@ -22,6 +23,7 @@ Rails.application.routes.draw do
   resources :clients do
     collection do
     get 'show_suppliers', to: :show_suppliers
+    get 'show_clients'
   end
   end
   

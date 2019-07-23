@@ -11,6 +11,7 @@ import DashboardPage from "views/Dashboard/Dashboard.jsx";
 import UserProfile from "views/UserProfile/UserProfile.jsx";
 import TableList from "views/TableList/TableList.jsx";
 import Typography from "views/Typography/Typography.jsx";
+import PedidoAdd from "views/Typography/PedidoAdd.jsx";
 import Icons from "views/Icons/Icons.jsx";
 import Maps from "views/Maps/Maps.jsx";
 import MateriaPrima from "views/MateriaPrima/MateriaPrima.jsx";
@@ -104,13 +105,21 @@ const dashboardRoutes = [
     layout: "/admin",
     hide: true
   },
-  ,
   {
     path: "/users_add",
     name: "Usuarios",
     rtlName: "خرائط",
     icon: Unarchive,
     component: UsersAdd,
+    layout: "/admin",
+    hide: true
+  },
+  {
+    path: "/pedido_add",
+    name: "Pedidos",
+    rtlName: "خرائط",
+    icon: Unarchive,
+    component: PedidoAdd,
     layout: "/admin",
     hide: true
   }

@@ -23,8 +23,9 @@ class InventoriesController < ApplicationController
     end
     
     def sell
-      inventory = Inventory.find(params[:id])
       raw_params = sell_params
+
+      inventory = Inventory.find(raw_params[:inventory_id])
       quantity = inventory.quantity.to_i - raw_params[:quantity].to_i
       client = ClientsInventory.create(sell_params)
       client.save
@@ -37,9 +38,28 @@ class InventoriesController < ApplicationController
     end
 
     def get_sell
-        render json: ClientsInventory.all
+
+        history = Client.find_by_sql("
+          SELECT clients.name AS cname, products.name, clients_inventories.quantity, clients_inventories.city FROM
+          clients
+          INNER JOIN clients_inventories ON clients.id = clients_inventories.client_id
+          INNER JOIN inventories ON inventories.id = clients_inventories.inventory_id
+          INNER JOIN products ON inventories.product_id = products.id
+        ")
+
+        render json: history
     end
-    
+
+    def get_full
+      history = Client.find_by_sql("
+          SELECT inventories.id AS id, products.name AS name FROM
+          inventories
+          INNER JOIN products ON inventories.product_id = products.id
+        ")
+
+        render json: history
+    end
+
     private
     def get_params
         params.require(:inventory).permit(:product_id, :quantity, :retailer_cost, :wholesale_cost)
