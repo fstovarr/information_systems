@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-<<<<<<< HEAD
   resources :clients, :products, :inventories
-=======
-  resources :products
 
   resources :inventories do
     collection do
@@ -12,7 +9,6 @@ Rails.application.routes.draw do
       get 'get_full'
     end
   end
->>>>>>> develop
 
   resources :raw_materials do
     member do

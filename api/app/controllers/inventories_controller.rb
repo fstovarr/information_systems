@@ -4,7 +4,6 @@ class InventoriesController < ApplicationController
     end
     
     def create
-<<<<<<< HEAD
         pms = get_params
         if params.key?("name")
             product = Product.create name: params["name"]
@@ -13,9 +12,6 @@ class InventoriesController < ApplicationController
         else
             Inventory.create(get_params)
         end
-=======
-        Inventory.create(get_params)
->>>>>>> develop
     end
     
     def show
