@@ -2737,3 +2737,106 @@ Processing by ClientsController#show_suppliers as HTML
 Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/clients" for ::1 at 2019-07-23 01:20:29 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ClientsController#index as HTML
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/controllers/clients_controller.rb:3
+Completed 200 OK in 15ms (Views: 12.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/clients" for ::1 at 2019-07-23 05:39:58 -0500
+Processing by ClientsController#index as HTML
+  [1m[36mClient Load (1.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/controllers/clients_controller.rb:3
+Completed 200 OK in 15ms (Views: 10.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/clients/show_suppliers" for ::1 at 2019-07-23 05:40:00 -0500
+Processing by ClientsController#show_suppliers as HTML
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "PROOVEDORES"]]
+  ↳ app/controllers/clients_controller.rb:26
+Completed 200 OK in 19ms (Views: 14.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/clients/show_suppliers" for ::1 at 2019-07-23 05:40:26 -0500
+Processing by ClientsController#show_suppliers as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "PROOVEDORES"]]
+  ↳ app/controllers/clients_controller.rb:26
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/clients" for ::1 at 2019-07-23 05:40:27 -0500
+Processing by ClientsController#index as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/controllers/clients_controller.rb:3
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/clients/show_suppliers" for ::1 at 2019-07-23 05:40:28 -0500
+Processing by ClientsController#show_suppliers as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "PROOVEDORES"]]
+  ↳ app/controllers/clients_controller.rb:26
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/clients/show_suppliers" for ::1 at 2019-07-23 05:40:51 -0500
+Processing by ClientsController#show_suppliers as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "PROOVEDORES"]]
+  ↳ app/controllers/clients_controller.rb:26
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/clients" for ::1 at 2019-07-23 05:41:09 -0500
+Processing by ClientsController#create as HTML
+  Parameters: {"client"=>{"name"=>"adsf", "phone"=>"", "address"=>"asdfsd", "client_type"=>"SATELITES"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_controller.rb:7
+  [1m[36mClient Create (2.2ms)[0m  [1m[32mINSERT INTO "clients" ("name", "phone", "address", "client_type") VALUES (?, ?, ?, ?)[0m  [["name", "adsf"], ["phone", ""], ["address", "asdfsd"], ["client_type", "SATELITES"]]
+  ↳ app/controllers/clients_controller.rb:7
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/clients_controller.rb:7
+Completed 204 No Content in 11ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/clients" for ::1 at 2019-07-23 05:41:09 -0500
+Processing by ClientsController#index as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/controllers/clients_controller.rb:3
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/clients/show_suppliers" for ::1 at 2019-07-23 05:41:16 -0500
+Processing by ClientsController#show_suppliers as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "PROOVEDORES"]]
+  ↳ app/controllers/clients_controller.rb:26
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/clients/show_suppliers" for ::1 at 2019-07-23 05:41:40 -0500
+Processing by ClientsController#show_suppliers as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "PROOVEDORES"]]
+  ↳ app/controllers/clients_controller.rb:26
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/clients" for ::1 at 2019-07-23 05:41:46 -0500
+Processing by ClientsController#create as HTML
+  Parameters: {"client"=>{"name"=>"asdf", "phone"=>"123412", "address"=>"asdfasd", "client_type"=>"REGULARES"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_controller.rb:7
+  [1m[36mClient Create (0.9ms)[0m  [1m[32mINSERT INTO "clients" ("name", "phone", "address", "client_type") VALUES (?, ?, ?, ?)[0m  [["name", "asdf"], ["phone", "123412"], ["address", "asdfasd"], ["client_type", "REGULARES"]]
+  ↳ app/controllers/clients_controller.rb:7
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/clients_controller.rb:7
+Completed 204 No Content in 6ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/clients" for ::1 at 2019-07-23 05:41:46 -0500
+Processing by ClientsController#index as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/controllers/clients_controller.rb:3
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
