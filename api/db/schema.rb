@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2019_07_22_014216) do
     t.string "city"
     t.string "address"
     t.string "phone"
+    t.decimal "quantity", null: false
     t.index ["client_id", "inventory_id", "created_at"], name: "client_inventory_created_id"
     t.index ["inventory_id", "client_id", "created_at"], name: "inventory_client_created_id"
   end

@@ -2901,6 +2901,7 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.4ms)
 
 
+<<<<<<< HEAD
 Started GET "/products" for ::1 at 2019-07-23 05:36:26 -0500
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /home/fabiotovar/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
@@ -2960,6 +2961,254 @@ Started GET "/admin/table" for ::1 at 2019-07-23 05:44:50 -0500
   ↳ /home/fabiotovar/.rbenv/versions/2.6.3/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
   
 ActionController::RoutingError (No route matches [GET] "/admin/table"):
+=======
+Started GET "/" for ::1 at 2019-07-23 08:23:00 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/cristhiancamilogomezneira/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/cristhiancamilogomezneira/.rvm/gems/ruby-2.6.3/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (2.9ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:26:55 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.9ms)[0m  [1m[34m
+      SELECT cost, DATE_FORMAT(arrived_at, '%Y%m')
+      FROM clients_raw_materials
+      GROUP BY DATE_FORMAT(arrived_at, '%Y%m')[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such function: DATE_FORMAT: 
+      SELECT cost, DATE_FORMAT(arrived_at, '%Y%m')
+      FROM clients_raw_materials
+      GROUP BY DATE_FORMAT(arrived_at, '%Y%m')):
+  
+app/controllers/raw_materials_controller.rb:46:in `get_expenses'
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:27:33 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.5ms)[0m  [1m[34m
+      SELECT cost, DATE_FORMAT(arrived_at, '%Y%m') AS date
+      FROM clients_raw_materials
+      GROUP BY DATE_FORMAT(arrived_at, '%Y%m')[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such function: DATE_FORMAT: 
+      SELECT cost, DATE_FORMAT(arrived_at, '%Y%m') AS date
+      FROM clients_raw_materials
+      GROUP BY DATE_FORMAT(arrived_at, '%Y%m')):
+  
+app/controllers/raw_materials_controller.rb:46:in `get_expenses'
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:28:49 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (4.8ms)[0m  [1m[34m
+      SELECT cost, DATE_FORMAT(arrived_at, '%Y%m') AS date
+      FROM clients_raw_materials
+      GROUP BY DATE_FORMAT(arrived_at, '%Y%m')[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 4.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such function: DATE_FORMAT: 
+      SELECT cost, DATE_FORMAT(arrived_at, '%Y%m') AS date
+      FROM clients_raw_materials
+      GROUP BY DATE_FORMAT(arrived_at, '%Y%m')):
+  
+app/controllers/raw_materials_controller.rb:46:in `get_expenses'
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:29:26 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (2.0ms)[0m  [1m[34m
+      SELECT cost, DATE_FORMAT(arrived_at, '%Y%m') AS date
+      FROM clients_raw_materials
+      GROUP BY DATE_FORMAT(arrived_at, '%Y%m')[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 2.0ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such function: DATE_FORMAT: 
+      SELECT cost, DATE_FORMAT(arrived_at, '%Y%m') AS date
+      FROM clients_raw_materials
+      GROUP BY DATE_FORMAT(arrived_at, '%Y%m')):
+  
+app/controllers/raw_materials_controller.rb:46:in `get_expenses'
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:29:43 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.3ms)[0m  [1m[34m
+      SELECT cost, DATE_FORMAT(arrived_at, '%Y%m') AS date
+      FROM clients_raw_materials
+      GROUP BY DATE_FORMAT(arrived_at, '%Y%m')[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.3ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such function: DATE_FORMAT: 
+      SELECT cost, DATE_FORMAT(arrived_at, '%Y%m') AS date
+      FROM clients_raw_materials
+      GROUP BY DATE_FORMAT(arrived_at, '%Y%m')):
+  
+app/controllers/raw_materials_controller.rb:46:in `get_expenses'
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:30:41 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.8ms)[0m  [1m[34m
+      SELECT cost, EXTRACT(YEAR_MONTH FROM arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY EXTRACT(YEAR_MONTH FROM arrived_at)[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near "FROM": syntax error: 
+      SELECT cost, EXTRACT(YEAR_MONTH FROM arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY EXTRACT(YEAR_MONTH FROM arrived_at)):
+  
+app/controllers/raw_materials_controller.rb:46:in `get_expenses'
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:30:50 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.5ms)[0m  [1m[34m
+      SELECT cost, EXTRACT(YEAR_MONTH FROM arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY EXTRACT(YEAR_MONTH FROM arrived_at)[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near "FROM": syntax error: 
+      SELECT cost, EXTRACT(YEAR_MONTH FROM arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY EXTRACT(YEAR_MONTH FROM arrived_at)):
+  
+app/controllers/raw_materials_controller.rb:46:in `get_expenses'
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:32:12 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.4ms)[0m  [1m[34m
+      SELECT cost, EXTRACT(YEAR_MONTH FROM arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY date;[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: near "FROM": syntax error: 
+      SELECT cost, EXTRACT(YEAR_MONTH FROM arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY date;):
+  
+app/controllers/raw_materials_controller.rb:46:in `get_expenses'
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:33:15 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.5ms)[0m  [1m[34m
+      SELECT cost, YEAR(arrived_at) as yr, MONTH(arrived_at) AS mn
+      FROM clients_raw_materials
+      GROUP BY YEAR(arrived_at), MONTH(arrived_at);[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such function: YEAR: 
+      SELECT cost, YEAR(arrived_at) as yr, MONTH(arrived_at) AS mn
+      FROM clients_raw_materials
+      GROUP BY YEAR(arrived_at), MONTH(arrived_at);):
+  
+app/controllers/raw_materials_controller.rb:46:in `get_expenses'
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:34:34 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (2.6ms)[0m  [1m[34m
+      SELECT cost, strfttime('%y/%m', arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY strfttime('%y/%m', arrived_at);[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 2.6ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such function: strfttime: 
+      SELECT cost, strfttime('%y/%m', arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY strfttime('%y/%m', arrived_at);):
+  
+app/controllers/raw_materials_controller.rb:46:in `get_expenses'
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:35:41 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (2.7ms)[0m  [1m[34m
+      SELECT cost, arrived_at AS date
+      FROM clients_raw_materials
+      GROUP BY arrived_at;[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 500 Internal Server Error in 735ms (ActiveRecord: 5.0ms)
+
+
+  
+NameError (undefined local variable or method `data' for #<RawMaterialsController:0x00007ff2bc858de0>):
+  
+app/controllers/raw_materials_controller.rb:50:in `get_expenses'
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:35:57 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.7ms)[0m  [1m[34m
+      SELECT cost, arrived_at AS date
+      FROM clients_raw_materials
+      GROUP BY arrived_at;[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 200 OK in 32ms (Views: 3.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:37:35 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (2.5ms)[0m  [1m[34m
+      SELECT cost, date(arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY date(arrived_at);[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 200 OK in 35ms (Views: 1.3ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:38:09 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (18.4ms)[0m  [1m[34m
+      SELECT cost, date(arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY date(arrived_at);[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 200 OK in 56ms (Views: 5.6ms | ActiveRecord: 18.4ms)
+
+
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:38:09 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.4ms)[0m  [1m[34m
+      SELECT cost, date(arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY date(arrived_at);[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:39:53 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (2.7ms)[0m  [1m[34m
+      SELECT cost, date(arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY date(arrived_at);[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 200 OK in 27ms (Views: 5.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/raw_materias" for ::1 at 2019-07-23 08:39:53 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/raw_materias"):
+>>>>>>> develop
   
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
 actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
@@ -2983,6 +3232,7 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/inventories" for ::1 at 2019-07-23 05:44:58 -0500
   
 ActionController::RoutingError (uninitialized constant InventoriesController):
@@ -3013,6 +3263,23 @@ activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
 actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
 actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+=======
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:39:54 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (3.2ms)[0m  [1m[34m
+      SELECT cost, date(arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY date(arrived_at);[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/raw_materias" for ::1 at 2019-07-23 08:39:54 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/raw_materias"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+>>>>>>> develop
 actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
 railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
 railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
@@ -3034,6 +3301,7 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/inventories" for ::1 at 2019-07-23 05:45:25 -0500
   
 LoadError (Unable to autoload constant InventoriesController, expected /home/fabiotovar/Proyectos/InformationSystems/api/app/controllers/inventories_controller.rb to define it):
@@ -3067,6 +3335,23 @@ activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
 actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
 actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
 actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+=======
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:40:04 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.3ms)[0m  [1m[34m
+      SELECT cost, date(arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY date(arrived_at);[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/raw_materias" for ::1 at 2019-07-23 08:40:04 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/raw_materias"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+>>>>>>> develop
 actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
 railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
 railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
@@ -3088,6 +3373,7 @@ puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
 puma (3.12.1) lib/puma/server.rb:474:in `process_client'
 puma (3.12.1) lib/puma/server.rb:334:in `block in run'
 puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+<<<<<<< HEAD
 Started GET "/inventories" for ::1 at 2019-07-23 05:46:33 -0500
 Processing by InventoriesController#index as HTML
   [1m[36mInventory Load (0.2ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
@@ -14823,12 +15109,223 @@ Completed 200 OK in 8ms (Views: 5.4ms | ActiveRecord: 0.8ms)
 Started GET "/raw_materials/get_history" for ::1 at 2019-07-23 09:06:43 -0500
 Processing by RawMaterialsController#get_history as HTML
   [1m[36mClient Load (0.2ms)[0m  [1m[34m
+=======
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:40:23 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.3ms)[0m  [1m[34m
+      SELECT cost, date(arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY date(arrived_at);[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/raw_materials" for ::1 at 2019-07-23 08:40:24 -0500
+Processing by RawMaterialsController#index as HTML
+  [1m[36mRawMaterial Load (0.8ms)[0m  [1m[34mSELECT "raw_materials".* FROM "raw_materials"[0m
+  ↳ app/controllers/raw_materials_controller.rb:6
+Completed 200 OK in 25ms (Views: 15.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:40:24 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.4ms)[0m  [1m[34m
+      SELECT cost, date(arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY date(arrived_at);[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/raw_materials" for ::1 at 2019-07-23 08:40:25 -0500
+Processing by RawMaterialsController#index as HTML
+  [1m[36mRawMaterial Load (0.2ms)[0m  [1m[34mSELECT "raw_materials".* FROM "raw_materials"[0m
+  ↳ app/controllers/raw_materials_controller.rb:6
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:41:04 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.4ms)[0m  [1m[34m
+      SELECT cost, date(arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY date(arrived_at);[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 08:41:05 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.5ms)[0m  [1m[34m
+      SELECT cost, date(arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY date(arrived_at);[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 200 OK in 28ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/raw_materials" for ::1 at 2019-07-23 08:41:05 -0500
+Processing by RawMaterialsController#index as HTML
+  [1m[36mRawMaterial Load (0.4ms)[0m  [1m[34mSELECT "raw_materials".* FROM "raw_materials"[0m
+  ↳ app/controllers/raw_materials_controller.rb:6
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/raw_materials" for ::1 at 2019-07-23 08:41:05 -0500
+Processing by RawMaterialsController#index as HTML
+  [1m[36mRawMaterial Load (0.5ms)[0m  [1m[34mSELECT "raw_materials".* FROM "raw_materials"[0m
+  ↳ app/controllers/raw_materials_controller.rb:6
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 08:43:56 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/inventories"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/clients" for ::1 at 2019-07-23 08:44:01 -0500
+Processing by ClientsController#index as HTML
+  [1m[36mClient Load (8.8ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/controllers/clients_controller.rb:3
+Completed 200 OK in 15ms (Views: 4.8ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 08:44:02 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/inventories"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/inventories" for ::1 at 2019-07-23 08:44:04 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/inventories"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/inventories" for ::1 at 2019-07-23 08:44:15 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/inventories"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Started GET "/clients" for ::1 at 2019-07-23 08:59:44 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by ClientsController#index as HTML
+  [1m[36mClient Load (0.5ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/controllers/clients_controller.rb:3
+Completed 200 OK in 11ms (Views: 7.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/raw_materials" for ::1 at 2019-07-23 08:59:45 -0500
+Processing by RawMaterialsController#index as HTML
+  [1m[36mRawMaterial Load (0.5ms)[0m  [1m[34mSELECT "raw_materials".* FROM "raw_materials"[0m
+  ↳ app/controllers/raw_materials_controller.rb:6
+Completed 200 OK in 8ms (Views: 4.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/raw_materials/get_history" for ::1 at 2019-07-23 08:59:45 -0500
+Processing by RawMaterialsController#get_history as HTML
+  [1m[36mClient Load (0.3ms)[0m  [1m[34m
+>>>>>>> develop
       SELECT clients.name AS cname, raw_materials.name, clients_raw_materials.cost, clients_raw_materials.arrived_at FROM
       clients
       INNER JOIN clients_raw_materials ON clients.id = clients_raw_materials.client_id
       INNER JOIN raw_materials ON clients_raw_materials.raw_material_id = raw_materials.id
     [0m
   ↳ app/controllers/raw_materials_controller.rb:35
+<<<<<<< HEAD
 Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
 
 
@@ -14916,12 +15413,221 @@ Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms)
 Started GET "/raw_materials/get_history" for ::1 at 2019-07-23 09:06:54 -0500
 Processing by RawMaterialsController#get_history as HTML
   [1m[36mClient Load (0.2ms)[0m  [1m[34m
+=======
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 09:04:48 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (1.3ms)[0m  [1m[34m
+      SELECT cost, date(arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY date(arrived_at);[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 200 OK in 18ms (Views: 1.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/raw_materials" for ::1 at 2019-07-23 09:04:48 -0500
+Processing by RawMaterialsController#index as HTML
+  [1m[36mRawMaterial Load (0.3ms)[0m  [1m[34mSELECT "raw_materials".* FROM "raw_materials"[0m
+  ↳ app/controllers/raw_materials_controller.rb:6
+Completed 200 OK in 11ms (Views: 8.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/inventories/get_sell" for ::1 at 2019-07-23 09:04:51 -0500
+Processing by InventoriesController#show as HTML
+  Parameters: {"id"=>"get_sell"}
+  [1m[36mInventory Load (0.6ms)[0m  [1m[34mSELECT  "inventories".* FROM "inventories" WHERE "inventories"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/inventories_controller.rb:11
+Completed 404 Not Found in 9ms (ActiveRecord: 1.1ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Inventory with 'id'=get_sell):
+  
+app/controllers/inventories_controller.rb:11:in `show'
+Started GET "/inventories/get_sell" for ::1 at 2019-07-23 09:06:19 -0500
+Processing by InventoriesController#show as HTML
+  Parameters: {"id"=>"get_sell"}
+  [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT  "inventories".* FROM "inventories" WHERE "inventories"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/inventories_controller.rb:11
+Completed 404 Not Found in 10ms (ActiveRecord: 1.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Inventory with 'id'=get_sell):
+  
+app/controllers/inventories_controller.rb:11:in `show'
+Started GET "/inventories/get_sell" for ::1 at 2019-07-23 09:06:34 -0500
+Processing by InventoriesController#get_sell as HTML
+  [1m[36mClient Load (0.5ms)[0m  [1m[34m
+          SELECT clients.name AS cname, products.name, clients_inventories.quantity, clients_inventories.city FROM
+          clients
+          INNER JOIN clients_inventories ON clients.id = clients_inventories.client_id
+          INNER JOIN inventories ON inventories.id = clients_inventories.inventory_id
+          INNER JOIN products ON clients_inventories.product_id = products.id
+        [0m
+  ↳ app/controllers/inventories_controller.rb:41
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.5ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: clients_inventories.quantity: 
+          SELECT clients.name AS cname, products.name, clients_inventories.quantity, clients_inventories.city FROM
+          clients
+          INNER JOIN clients_inventories ON clients.id = clients_inventories.client_id
+          INNER JOIN inventories ON inventories.id = clients_inventories.inventory_id
+          INNER JOIN products ON clients_inventories.product_id = products.id
+        ):
+  
+app/controllers/inventories_controller.rb:41:in `get_sell'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateProducts (20190722010850)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "description" varchar, "color" varchar, "size" varchar)[0m
+  ↳ db/migrate/20190722010850_create_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190722010850"]]
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateClients (20190722010952)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "clients" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "phone" varchar, "address" varchar NOT NULL, "client_type" varchar NOT NULL)[0m
+  ↳ db/migrate/20190722010952_create_clients.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190722010952"]]
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateRawMaterials (20190722011036)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "raw_materials" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "quantity" integer NOT NULL, "description" varchar)[0m
+  ↳ db/migrate/20190722011036_create_raw_materials.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190722011036"]]
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateJoinTableClientsProducts (20190722011626)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "clients_products" ("client_id" integer NOT NULL, "product_id" integer NOT NULL, "quantity" integer NOT NULL, "sent" boolean NOT NULL, "created_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190722011626_create_join_table_clients_products.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "client_product_date" ON "clients_products" ("client_id", "product_id", "created_at")[0m
+  ↳ db/migrate/20190722011626_create_join_table_clients_products.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "product_client_date" ON "clients_products" ("product_id", "client_id", "created_at")[0m
+  ↳ db/migrate/20190722011626_create_join_table_clients_products.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190722011626"]]
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateInventory (20190722013754)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "inventories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "product_id" integer, "quantity" integer, "retailer_cost" decimal, "wholesale_cost" decimal, CONSTRAINT "fk_rails_e94eb46135"
+FOREIGN KEY ("product_id")
+  REFERENCES "products" ("id")
+)[0m
+  ↳ db/migrate/20190722013754_create_inventory.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_inventories_on_product_id" ON "inventories" ("product_id")[0m
+  ↳ db/migrate/20190722013754_create_inventory.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190722013754"]]
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateJoinTableClientsInventory (20190722014037)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "clients_inventories" ("client_id" integer NOT NULL, "inventory_id" integer NOT NULL, "created_at" datetime NOT NULL, "city" varchar, "address" varchar, "phone" varchar, "quantity" decimal NOT NULL)[0m
+  ↳ db/migrate/20190722014037_create_join_table_clients_inventory.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "client_inventory_created_id" ON "clients_inventories" ("client_id", "inventory_id", "created_at")[0m
+  ↳ db/migrate/20190722014037_create_join_table_clients_inventory.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "inventory_client_created_id" ON "clients_inventories" ("inventory_id", "client_id", "created_at")[0m
+  ↳ db/migrate/20190722014037_create_join_table_clients_inventory.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190722014037"]]
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateJoinTableClientsRawMaterials (20190722014216)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "clients_raw_materials" ("client_id" integer NOT NULL, "raw_material_id" integer NOT NULL, "arrived_at" datetime NOT NULL, "cost" decimal NOT NULL)[0m
+  ↳ db/migrate/20190722014216_create_join_table_clients_raw_materials.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE  INDEX "client_raw_arrived_id" ON "clients_raw_materials" ("client_id", "raw_materials_id", "arrived_at")[0m
+  ↳ db/migrate/20190722014216_create_join_table_clients_raw_materials.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "raw_client_arrived_id" ON "clients_raw_materials" ("inventory_id", "raw_materials_id", "arrived_at")[0m
+  ↳ db/migrate/20190722014216_create_join_table_clients_raw_materials.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190722014216"]]
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-07-23 14:07:00.807372"], ["updated_at", "2019-07-23 14:07:00.807372"]]
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Started GET "/inventories/get_sell" for ::1 at 2019-07-23 09:07:07 -0500
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by InventoriesController#get_sell as HTML
+  [1m[36mClient Load (0.6ms)[0m  [1m[34m
+          SELECT clients.name AS cname, products.name, clients_inventories.quantity, clients_inventories.city FROM
+          clients
+          INNER JOIN clients_inventories ON clients.id = clients_inventories.client_id
+          INNER JOIN inventories ON inventories.id = clients_inventories.inventory_id
+          INNER JOIN products ON clients_inventories.product_id = products.id
+        [0m
+  ↳ app/controllers/inventories_controller.rb:41
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such column: clients_inventories.product_id: 
+          SELECT clients.name AS cname, products.name, clients_inventories.quantity, clients_inventories.city FROM
+          clients
+          INNER JOIN clients_inventories ON clients.id = clients_inventories.client_id
+          INNER JOIN inventories ON inventories.id = clients_inventories.inventory_id
+          INNER JOIN products ON clients_inventories.product_id = products.id
+        ):
+  
+app/controllers/inventories_controller.rb:41:in `get_sell'
+Started GET "/inventories/get_sell" for ::1 at 2019-07-23 09:08:31 -0500
+Processing by InventoriesController#get_sell as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34m
+          SELECT clients.name AS cname, products.name, clients_inventories.quantity, clients_inventories.city FROM
+          clients
+          INNER JOIN clients_inventories ON clients.id = clients_inventories.client_id
+          INNER JOIN inventories ON inventories.id = clients_inventories.inventory_id
+          INNER JOIN products ON inventories.product_id = products.id
+        [0m
+  ↳ app/controllers/inventories_controller.rb:41
+Completed 200 OK in 16ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/raw_materials/get_history" for ::1 at 2019-07-23 09:08:32 -0500
+Processing by RawMaterialsController#get_history as HTML
+  [1m[36mClient Load (0.8ms)[0m  [1m[34m
+>>>>>>> develop
       SELECT clients.name AS cname, raw_materials.name, clients_raw_materials.cost, clients_raw_materials.arrived_at FROM
       clients
       INNER JOIN clients_raw_materials ON clients.id = clients_raw_materials.client_id
       INNER JOIN raw_materials ON clients_raw_materials.raw_material_id = raw_materials.id
     [0m
   ↳ app/controllers/raw_materials_controller.rb:35
+<<<<<<< HEAD
 Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms)
 
 
@@ -14942,12 +15648,34 @@ Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.2ms)
 Started GET "/raw_materials/get_history" for ::1 at 2019-07-23 09:06:56 -0500
 Processing by RawMaterialsController#get_history as HTML
   [1m[36mClient Load (0.3ms)[0m  [1m[34m
+=======
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/inventories/get_sell" for ::1 at 2019-07-23 09:09:52 -0500
+Processing by InventoriesController#get_sell as HTML
+  [1m[36mClient Load (1.6ms)[0m  [1m[34m
+          SELECT clients.name AS cname, products.name, clients_inventories.quantity, clients_inventories.city FROM
+          clients
+          INNER JOIN clients_inventories ON clients.id = clients_inventories.client_id
+          INNER JOIN inventories ON inventories.id = clients_inventories.inventory_id
+          INNER JOIN products ON inventories.product_id = products.id
+        [0m
+  ↳ app/controllers/inventories_controller.rb:41
+Completed 200 OK in 10ms (Views: 1.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/raw_materials/get_history" for ::1 at 2019-07-23 09:09:52 -0500
+Processing by RawMaterialsController#get_history as HTML
+  [1m[36mClient Load (0.4ms)[0m  [1m[34m
+>>>>>>> develop
       SELECT clients.name AS cname, raw_materials.name, clients_raw_materials.cost, clients_raw_materials.arrived_at FROM
       clients
       INNER JOIN clients_raw_materials ON clients.id = clients_raw_materials.client_id
       INNER JOIN raw_materials ON clients_raw_materials.raw_material_id = raw_materials.id
     [0m
   ↳ app/controllers/raw_materials_controller.rb:35
+<<<<<<< HEAD
 Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
 
 
@@ -15265,12 +15993,331 @@ Completed 200 OK in 24ms (Views: 12.4ms | ActiveRecord: 3.4ms)
 Started GET "/raw_materials/get_history" for ::1 at 2019-07-23 09:40:46 -0500
 Processing by RawMaterialsController#get_history as HTML
   [1m[36mClient Load (0.7ms)[0m  [1m[34m
+=======
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 09:10:08 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34m
+      SELECT cost, date(arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY date(arrived_at);[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/raw_materials" for ::1 at 2019-07-23 09:10:08 -0500
+Processing by RawMaterialsController#index as HTML
+  [1m[36mRawMaterial Load (0.2ms)[0m  [1m[34mSELECT "raw_materials".* FROM "raw_materials"[0m
+  ↳ app/controllers/raw_materials_controller.rb:6
+Completed 200 OK in 26ms (Views: 3.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 09:10:52 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34m
+      SELECT cost, date(arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY date(arrived_at);[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/raw_materials" for ::1 at 2019-07-23 09:10:52 -0500
+Processing by RawMaterialsController#index as HTML
+  [1m[36mRawMaterial Load (0.1ms)[0m  [1m[34mSELECT "raw_materials".* FROM "raw_materials"[0m
+  ↳ app/controllers/raw_materials_controller.rb:6
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 09:11:58 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.5ms)[0m  [1m[34m
+      SELECT cost, date(arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY date(arrived_at);[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/raw_materials" for ::1 at 2019-07-23 09:11:58 -0500
+Processing by RawMaterialsController#index as HTML
+  [1m[36mRawMaterial Load (0.2ms)[0m  [1m[34mSELECT "raw_materials".* FROM "raw_materials"[0m
+  ↳ app/controllers/raw_materials_controller.rb:6
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 09:12:01 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34m
+      SELECT cost, date(arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY date(arrived_at);[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/raw_materials" for ::1 at 2019-07-23 09:12:01 -0500
+Processing by RawMaterialsController#index as HTML
+  [1m[36mRawMaterial Load (0.2ms)[0m  [1m[34mSELECT "raw_materials".* FROM "raw_materials"[0m
+  ↳ app/controllers/raw_materials_controller.rb:6
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/inventories/get_sell" for ::1 at 2019-07-23 09:12:05 -0500
+Processing by InventoriesController#get_sell as HTML
+  [1m[36mClient Load (0.3ms)[0m  [1m[34m
+          SELECT clients.name AS cname, products.name, clients_inventories.quantity, clients_inventories.city FROM
+          clients
+          INNER JOIN clients_inventories ON clients.id = clients_inventories.client_id
+          INNER JOIN inventories ON inventories.id = clients_inventories.inventory_id
+          INNER JOIN products ON inventories.product_id = products.id
+        [0m
+  ↳ app/controllers/inventories_controller.rb:41
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/raw_materials/get_history" for ::1 at 2019-07-23 09:12:05 -0500
+Processing by RawMaterialsController#get_history as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34m
       SELECT clients.name AS cname, raw_materials.name, clients_raw_materials.cost, clients_raw_materials.arrived_at FROM
       clients
       INNER JOIN clients_raw_materials ON clients.id = clients_raw_materials.client_id
       INNER JOIN raw_materials ON clients_raw_materials.raw_material_id = raw_materials.id
     [0m
   ↳ app/controllers/raw_materials_controller.rb:35
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/clients/show_suppliers" for ::1 at 2019-07-23 09:12:06 -0500
+Processing by ClientsController#show_suppliers as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "PROOVEDORES"]]
+  ↳ app/controllers/clients_controller.rb:26
+Completed 200 OK in 6ms (Views: 3.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/raw_materials" for ::1 at 2019-07-23 09:12:06 -0500
+Processing by RawMaterialsController#index as HTML
+  [1m[36mRawMaterial Load (0.1ms)[0m  [1m[34mSELECT "raw_materials".* FROM "raw_materials"[0m
+  ↳ app/controllers/raw_materials_controller.rb:6
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/clients/show_clients" for ::1 at 2019-07-23 09:13:56 -0500
+Processing by ClientsController#show_clients as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "REGULARES"]]
+  ↳ app/controllers/clients_controller.rb:31
+Completed 200 OK in 7ms (Views: 1.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/raw_materials" for ::1 at 2019-07-23 09:13:56 -0500
+Processing by RawMaterialsController#index as HTML
+  [1m[36mRawMaterial Load (0.2ms)[0m  [1m[34mSELECT "raw_materials".* FROM "raw_materials"[0m
+  ↳ app/controllers/raw_materials_controller.rb:6
+Completed 200 OK in 8ms (Views: 1.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/clients/show_clients" for ::1 at 2019-07-23 09:14:02 -0500
+Processing by ClientsController#show_clients as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "REGULARES"]]
+  ↳ app/controllers/clients_controller.rb:31
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/raw_materials" for ::1 at 2019-07-23 09:14:02 -0500
+Processing by RawMaterialsController#index as HTML
+  [1m[36mRawMaterial Load (0.1ms)[0m  [1m[34mSELECT "raw_materials".* FROM "raw_materials"[0m
+  ↳ app/controllers/raw_materials_controller.rb:6
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/clients/show_clients" for ::1 at 2019-07-23 09:14:15 -0500
+Processing by ClientsController#show_clients as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "REGULARES"]]
+  ↳ app/controllers/clients_controller.rb:31
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/raw_materials" for ::1 at 2019-07-23 09:14:15 -0500
+Processing by RawMaterialsController#index as HTML
+  [1m[36mRawMaterial Load (0.1ms)[0m  [1m[34mSELECT "raw_materials".* FROM "raw_materials"[0m
+  ↳ app/controllers/raw_materials_controller.rb:6
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/clients/show_clients" for ::1 at 2019-07-23 09:14:37 -0500
+Processing by ClientsController#show_clients as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "REGULARES"]]
+  ↳ app/controllers/clients_controller.rb:31
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:14:37 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.2ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:3
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/clients/show_clients" for ::1 at 2019-07-23 09:15:02 -0500
+Processing by ClientsController#show_clients as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "REGULARES"]]
+  ↳ app/controllers/clients_controller.rb:31
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/inventories/get_full" for ::1 at 2019-07-23 09:15:02 -0500
+Processing by InventoriesController#show as HTML
+  Parameters: {"id"=>"get_full"}
+  [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT  "inventories".* FROM "inventories" WHERE "inventories"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/inventories_controller.rb:11
+Completed 404 Not Found in 4ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Inventory with 'id'=get_full):
+  
+app/controllers/inventories_controller.rb:11:in `show'
+Started GET "/clients/show_clients" for ::1 at 2019-07-23 09:16:27 -0500
+Processing by ClientsController#show_clients as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "REGULARES"]]
+  ↳ app/controllers/clients_controller.rb:31
+Completed 200 OK in 10ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/inventories/get_full" for ::1 at 2019-07-23 09:16:27 -0500
+Processing by InventoriesController#get_full as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34m
+          SELECT inventories.id AS id, products.name AS name FROM
+          inventories
+          INNER JOIN products ON inventories.product_id = products.id
+        [0m
+  ↳ app/controllers/inventories_controller.rb:53
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/clients/show_clients" for ::1 at 2019-07-23 09:17:19 -0500
+Processing by ClientsController#show_clients as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "REGULARES"]]
+  ↳ app/controllers/clients_controller.rb:31
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/inventories/get_full" for ::1 at 2019-07-23 09:17:19 -0500
+Processing by InventoriesController#get_full as HTML
+  [1m[36mClient Load (0.4ms)[0m  [1m[34m
+          SELECT inventories.id AS id, products.name AS name FROM
+          inventories
+          INNER JOIN products ON inventories.product_id = products.id
+        [0m
+  ↳ app/controllers/inventories_controller.rb:53
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/clients/show_clients" for ::1 at 2019-07-23 09:18:10 -0500
+Processing by ClientsController#show_clients as HTML
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "REGULARES"]]
+  ↳ app/controllers/clients_controller.rb:31
+Completed 200 OK in 3ms (Views: 1.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/inventories/get_full" for ::1 at 2019-07-23 09:18:10 -0500
+Processing by InventoriesController#get_full as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34m
+          SELECT inventories.id AS id, products.name AS name FROM
+          inventories
+          INNER JOIN products ON inventories.product_id = products.id
+        [0m
+  ↳ app/controllers/inventories_controller.rb:53
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/clients/show_clients" for ::1 at 2019-07-23 09:18:51 -0500
+Processing by ClientsController#show_clients as HTML
+  [1m[36mClient Load (0.6ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "REGULARES"]]
+  ↳ app/controllers/clients_controller.rb:31
+Completed 200 OK in 12ms (Views: 6.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/inventories/get_full" for ::1 at 2019-07-23 09:18:51 -0500
+Processing by InventoriesController#get_full as HTML
+  [1m[36mClient Load (0.8ms)[0m  [1m[34m
+          SELECT inventories.id AS id, products.name AS name FROM
+          inventories
+          INNER JOIN products ON inventories.product_id = products.id
+        [0m
+  ↳ app/controllers/inventories_controller.rb:53
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/clients/show_clients" for ::1 at 2019-07-23 09:20:11 -0500
+Processing by ClientsController#show_clients as HTML
+  [1m[36mClient Load (0.7ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "REGULARES"]]
+  ↳ app/controllers/clients_controller.rb:31
+Completed 200 OK in 12ms (Views: 7.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/inventories/get_full" for ::1 at 2019-07-23 09:20:11 -0500
+Processing by InventoriesController#get_full as HTML
+  [1m[36mClient Load (0.7ms)[0m  [1m[34m
+          SELECT inventories.id AS id, products.name AS name FROM
+          inventories
+          INNER JOIN products ON inventories.product_id = products.id
+        [0m
+  ↳ app/controllers/inventories_controller.rb:53
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/inventories/get_sell" for ::1 at 2019-07-23 09:20:17 -0500
+Processing by InventoriesController#get_sell as HTML
+  [1m[36mClient Load (0.3ms)[0m  [1m[34m
+          SELECT clients.name AS cname, products.name, clients_inventories.quantity, clients_inventories.city FROM
+          clients
+          INNER JOIN clients_inventories ON clients.id = clients_inventories.client_id
+          INNER JOIN inventories ON inventories.id = clients_inventories.inventory_id
+          INNER JOIN products ON inventories.product_id = products.id
+        [0m
+  ↳ app/controllers/inventories_controller.rb:41
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/raw_materials/get_history" for ::1 at 2019-07-23 09:20:17 -0500
+Processing by RawMaterialsController#get_history as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34m
+      SELECT clients.name AS cname, raw_materials.name, clients_raw_materials.cost, clients_raw_materials.arrived_at FROM
+      clients
+      INNER JOIN clients_raw_materials ON clients.id = clients_raw_materials.client_id
+      INNER JOIN raw_materials ON clients_raw_materials.raw_material_id = raw_materials.id
+    [0m
+  ↳ app/controllers/raw_materials_controller.rb:35
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/inventories/get_sell" for ::1 at 2019-07-23 09:20:24 -0500
+Processing by InventoriesController#get_sell as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34m
+          SELECT clients.name AS cname, products.name, clients_inventories.quantity, clients_inventories.city FROM
+          clients
+          INNER JOIN clients_inventories ON clients.id = clients_inventories.client_id
+          INNER JOIN inventories ON inventories.id = clients_inventories.inventory_id
+          INNER JOIN products ON inventories.product_id = products.id
+        [0m
+  ↳ app/controllers/inventories_controller.rb:41
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/raw_materials/get_history" for ::1 at 2019-07-23 09:20:24 -0500
+Processing by RawMaterialsController#get_history as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34m
+>>>>>>> develop
+      SELECT clients.name AS cname, raw_materials.name, clients_raw_materials.cost, clients_raw_materials.arrived_at FROM
+      clients
+      INNER JOIN clients_raw_materials ON clients.id = clients_raw_materials.client_id
+      INNER JOIN raw_materials ON clients_raw_materials.raw_material_id = raw_materials.id
+    [0m
+  ↳ app/controllers/raw_materials_controller.rb:35
+<<<<<<< HEAD
 Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 1.3ms)
 
 
@@ -15317,12 +16364,103 @@ Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms)
 Started GET "/raw_materials/get_history" for ::1 at 2019-07-23 09:41:16 -0500
 Processing by RawMaterialsController#get_history as HTML
   [1m[36mClient Load (0.2ms)[0m  [1m[34m
+=======
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/clients/show_clients" for ::1 at 2019-07-23 09:20:25 -0500
+Processing by ClientsController#show_clients as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "REGULARES"]]
+  ↳ app/controllers/clients_controller.rb:31
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/inventories/get_full" for ::1 at 2019-07-23 09:20:25 -0500
+Processing by InventoriesController#get_full as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34m
+          SELECT inventories.id AS id, products.name AS name FROM
+          inventories
+          INNER JOIN products ON inventories.product_id = products.id
+        [0m
+  ↳ app/controllers/inventories_controller.rb:53
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/clients/show_clients" for ::1 at 2019-07-23 09:20:34 -0500
+Processing by ClientsController#show_clients as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "REGULARES"]]
+  ↳ app/controllers/clients_controller.rb:31
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/inventories/get_full" for ::1 at 2019-07-23 09:20:34 -0500
+Processing by InventoriesController#get_full as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34m
+          SELECT inventories.id AS id, products.name AS name FROM
+          inventories
+          INNER JOIN products ON inventories.product_id = products.id
+        [0m
+  ↳ app/controllers/inventories_controller.rb:53
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/clients" for ::1 at 2019-07-23 09:20:38 -0500
+Processing by ClientsController#index as HTML
+  [1m[36mClient Load (0.4ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/controllers/clients_controller.rb:3
+Completed 200 OK in 2ms (Views: 1.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/clients/show_suppliers" for ::1 at 2019-07-23 09:20:40 -0500
+Processing by ClientsController#show_suppliers as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "PROOVEDORES"]]
+  ↳ app/controllers/clients_controller.rb:26
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/clients" for ::1 at 2019-07-23 09:20:46 -0500
+Processing by ClientsController#create as HTML
+  Parameters: {"client"=>{"name"=>"aaa", "phone"=>"1234", "address"=>"asdf", "client_type"=>"REGULARES"}}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/clients_controller.rb:7
+  [1m[36mClient Create (0.8ms)[0m  [1m[32mINSERT INTO "clients" ("name", "phone", "address", "client_type") VALUES (?, ?, ?, ?)[0m  [["name", "aaa"], ["phone", "1234"], ["address", "asdf"], ["client_type", "REGULARES"]]
+  ↳ app/controllers/clients_controller.rb:7
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/clients_controller.rb:7
+Completed 204 No Content in 19ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/clients" for ::1 at 2019-07-23 09:20:46 -0500
+Processing by ClientsController#index as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/controllers/clients_controller.rb:3
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/inventories/get_sell" for ::1 at 2019-07-23 09:20:47 -0500
+Processing by InventoriesController#get_sell as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34m
+          SELECT clients.name AS cname, products.name, clients_inventories.quantity, clients_inventories.city FROM
+          clients
+          INNER JOIN clients_inventories ON clients.id = clients_inventories.client_id
+          INNER JOIN inventories ON inventories.id = clients_inventories.inventory_id
+          INNER JOIN products ON inventories.product_id = products.id
+        [0m
+  ↳ app/controllers/inventories_controller.rb:41
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/raw_materials/get_history" for ::1 at 2019-07-23 09:20:47 -0500
+Processing by RawMaterialsController#get_history as HTML
+  [1m[36mClient Load (0.4ms)[0m  [1m[34m
+>>>>>>> develop
       SELECT clients.name AS cname, raw_materials.name, clients_raw_materials.cost, clients_raw_materials.arrived_at FROM
       clients
       INNER JOIN clients_raw_materials ON clients.id = clients_raw_materials.client_id
       INNER JOIN raw_materials ON clients_raw_materials.raw_material_id = raw_materials.id
     [0m
   ↳ app/controllers/raw_materials_controller.rb:35
+<<<<<<< HEAD
 Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.2ms)
 
 
@@ -15753,12 +16891,491 @@ Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 1.2ms)
 Started GET "/raw_materials/get_history" for ::1 at 2019-07-23 10:08:02 -0500
 Processing by RawMaterialsController#get_history as HTML
   [1m[36mClient Load (0.5ms)[0m  [1m[34m
+=======
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/clients/show_clients" for ::1 at 2019-07-23 09:20:49 -0500
+Processing by ClientsController#show_clients as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "REGULARES"]]
+  ↳ app/controllers/clients_controller.rb:31
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/inventories/get_full" for ::1 at 2019-07-23 09:20:49 -0500
+Processing by InventoriesController#get_full as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34m
+          SELECT inventories.id AS id, products.name AS name FROM
+          inventories
+          INNER JOIN products ON inventories.product_id = products.id
+        [0m
+  ↳ app/controllers/inventories_controller.rb:53
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/clients/show_clients" for ::1 at 2019-07-23 09:22:26 -0500
+Processing by ClientsController#show_clients as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "REGULARES"]]
+  ↳ app/controllers/clients_controller.rb:31
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories/get_full" for ::1 at 2019-07-23 09:22:26 -0500
+Processing by InventoriesController#get_full as HTML
+  [1m[36mClient Load (0.3ms)[0m  [1m[34m
+          SELECT inventories.id AS id, products.name AS name FROM
+          inventories
+          INNER JOIN products ON inventories.product_id = products.id
+        [0m
+  ↳ app/controllers/inventories_controller.rb:53
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/inventories/sell" for ::1 at 2019-07-23 09:22:42 -0500
+Processing by InventoriesController#sell as HTML
+  Parameters: {"register"=>{"client_id"=>1, "inventory_id"=>1, "city"=>"Bogota", "address"=>"Carrera 52c", "phone"=>"3133557269", "quantity"=>"300"}, "inventory"=>{}}
+Completed 404 Not Found in 3ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Inventory without an ID):
+  
+app/controllers/inventories_controller.rb:26:in `sell'
+Started GET "/clients/show_clients" for ::1 at 2019-07-23 09:23:19 -0500
+Processing by ClientsController#show_clients as HTML
+  [1m[36mClient Load (0.3ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "REGULARES"]]
+  ↳ app/controllers/clients_controller.rb:31
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/inventories/get_full" for ::1 at 2019-07-23 09:23:19 -0500
+Processing by InventoriesController#get_full as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34m
+          SELECT inventories.id AS id, products.name AS name FROM
+          inventories
+          INNER JOIN products ON inventories.product_id = products.id
+        [0m
+  ↳ app/controllers/inventories_controller.rb:53
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/inventories/sell/1" for ::1 at 2019-07-23 09:23:30 -0500
+  
+ActionController::RoutingError (No route matches [PUT] "/inventories/sell/1"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+rack-cors (1.0.3) lib/rack/cors.rb:95:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/clients/show_clients" for ::1 at 2019-07-23 09:23:40 -0500
+Processing by ClientsController#show_clients as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "REGULARES"]]
+  ↳ app/controllers/clients_controller.rb:31
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories/get_full" for ::1 at 2019-07-23 09:23:40 -0500
+Processing by InventoriesController#get_full as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34m
+          SELECT inventories.id AS id, products.name AS name FROM
+          inventories
+          INNER JOIN products ON inventories.product_id = products.id
+        [0m
+  ↳ app/controllers/inventories_controller.rb:53
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/inventories/sell" for ::1 at 2019-07-23 09:24:08 -0500
+Processing by InventoriesController#sell as HTML
+  Parameters: {"register"=>{"client_id"=>1, "inventory_id"=>1, "city"=>"asdf", "address"=>"asdf", "phone"=>"3241234", "quantity"=>"32"}, "inventory"=>{}}
+  [1m[36mInventory Load (0.3ms)[0m  [1m[34mSELECT  "inventories".* FROM "inventories" WHERE "inventories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/inventories_controller.rb:28
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:30
+  [1m[36mClientsInventory Create (0.5ms)[0m  [1m[32mINSERT INTO "clients_inventories" ("client_id", "inventory_id", "created_at", "city", "address", "phone", "quantity") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["client_id", 1], ["inventory_id", 1], ["created_at", "2019-07-23 14:24:08.377291"], ["city", "asdf"], ["address", "asdf"], ["phone", "3241234"], ["quantity", 32.0]]
+  ↳ app/controllers/inventories_controller.rb:30
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:31
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:32
+  [1m[36mInventory Update (0.3ms)[0m  [1m[33mUPDATE "inventories" SET "quantity" = ? WHERE "inventories"."id" = ?[0m  [["quantity", -12], ["id", 1]]
+  ↳ app/controllers/inventories_controller.rb:32
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:32
+Completed 200 OK in 29ms (Views: 0.3ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/inventories/get_sell" for ::1 at 2019-07-23 09:24:08 -0500
+Processing by InventoriesController#get_sell as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34m
+          SELECT clients.name AS cname, products.name, clients_inventories.quantity, clients_inventories.city FROM
+          clients
+          INNER JOIN clients_inventories ON clients.id = clients_inventories.client_id
+          INNER JOIN inventories ON inventories.id = clients_inventories.inventory_id
+          INNER JOIN products ON inventories.product_id = products.id
+        [0m
+  ↳ app/controllers/inventories_controller.rb:42
+Completed 200 OK in 26ms (Views: 0.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/inventories/get_sell" for ::1 at 2019-07-23 09:24:16 -0500
+Processing by InventoriesController#get_sell as HTML
+  [1m[36mClient Load (0.3ms)[0m  [1m[34m
+          SELECT clients.name AS cname, products.name, clients_inventories.quantity, clients_inventories.city FROM
+          clients
+          INNER JOIN clients_inventories ON clients.id = clients_inventories.client_id
+          INNER JOIN inventories ON inventories.id = clients_inventories.inventory_id
+          INNER JOIN products ON inventories.product_id = products.id
+        [0m
+  ↳ app/controllers/inventories_controller.rb:42
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/inventories/get_sell" for ::1 at 2019-07-23 09:24:44 -0500
+Processing by InventoriesController#get_sell as HTML
+  [1m[36mClient Load (0.5ms)[0m  [1m[34m
+          SELECT clients.name AS cname, products.name, clients_inventories.quantity, clients_inventories.city FROM
+          clients
+          INNER JOIN clients_inventories ON clients.id = clients_inventories.client_id
+          INNER JOIN inventories ON inventories.id = clients_inventories.inventory_id
+          INNER JOIN products ON inventories.product_id = products.id
+        [0m
+  ↳ app/controllers/inventories_controller.rb:42
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/raw_materials/get_history" for ::1 at 2019-07-23 09:24:45 -0500
+Processing by RawMaterialsController#get_history as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34m
       SELECT clients.name AS cname, raw_materials.name, clients_raw_materials.cost, clients_raw_materials.arrived_at FROM
       clients
       INNER JOIN clients_raw_materials ON clients.id = clients_raw_materials.client_id
       INNER JOIN raw_materials ON clients_raw_materials.raw_material_id = raw_materials.id
     [0m
   ↳ app/controllers/raw_materials_controller.rb:35
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/clients/show_clients" for ::1 at 2019-07-23 09:24:50 -0500
+Processing by ClientsController#show_clients as HTML
+  [1m[36mClient Load (0.9ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "REGULARES"]]
+  ↳ app/controllers/clients_controller.rb:31
+Completed 200 OK in 7ms (Views: 3.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/inventories/get_full" for ::1 at 2019-07-23 09:24:50 -0500
+Processing by InventoriesController#get_full as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34m
+          SELECT inventories.id AS id, products.name AS name FROM
+          inventories
+          INNER JOIN products ON inventories.product_id = products.id
+        [0m
+  ↳ app/controllers/inventories_controller.rb:54
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started PUT "/inventories/sell" for ::1 at 2019-07-23 09:25:00 -0500
+Processing by InventoriesController#sell as HTML
+  Parameters: {"register"=>{"client_id"=>1, "inventory_id"=>1, "city"=>"bogota", "address"=>"Carrera 52c", "phone"=>"234", "quantity"=>"30"}, "inventory"=>{}}
+  [1m[36mInventory Load (0.2ms)[0m  [1m[34mSELECT  "inventories".* FROM "inventories" WHERE "inventories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/inventories_controller.rb:28
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:30
+  [1m[36mClientsInventory Create (0.5ms)[0m  [1m[32mINSERT INTO "clients_inventories" ("client_id", "inventory_id", "created_at", "city", "address", "phone", "quantity") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["client_id", 1], ["inventory_id", 1], ["created_at", "2019-07-23 14:25:00.835108"], ["city", "bogota"], ["address", "Carrera 52c"], ["phone", "234"], ["quantity", 30.0]]
+  ↳ app/controllers/inventories_controller.rb:30
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:30
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:31
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:31
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventories_controller.rb:32
+  [1m[36mInventory Update (0.4ms)[0m  [1m[33mUPDATE "inventories" SET "quantity" = ? WHERE "inventories"."id" = ?[0m  [["quantity", -42], ["id", 1]]
+  ↳ app/controllers/inventories_controller.rb:32
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventories_controller.rb:32
+Completed 200 OK in 17ms (Views: 0.4ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/inventories/get_sell" for ::1 at 2019-07-23 09:25:00 -0500
+Processing by InventoriesController#get_sell as HTML
+  [1m[36mClient Load (0.5ms)[0m  [1m[34m
+          SELECT clients.name AS cname, products.name, clients_inventories.quantity, clients_inventories.city FROM
+          clients
+          INNER JOIN clients_inventories ON clients.id = clients_inventories.client_id
+          INNER JOIN inventories ON inventories.id = clients_inventories.inventory_id
+          INNER JOIN products ON inventories.product_id = products.id
+        [0m
+  ↳ app/controllers/inventories_controller.rb:42
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/raw_materials/get_history" for ::1 at 2019-07-23 09:25:00 -0500
+Processing by RawMaterialsController#get_history as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34m
+      SELECT clients.name AS cname, raw_materials.name, clients_raw_materials.cost, clients_raw_materials.arrived_at FROM
+      clients
+      INNER JOIN clients_raw_materials ON clients.id = clients_raw_materials.client_id
+      INNER JOIN raw_materials ON clients_raw_materials.raw_material_id = raw_materials.id
+    [0m
+  ↳ app/controllers/raw_materials_controller.rb:35
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories/get_sell" for ::1 at 2019-07-23 09:25:15 -0500
+Processing by InventoriesController#get_sell as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34m
+          SELECT clients.name AS cname, products.name, clients_inventories.quantity, clients_inventories.city FROM
+          clients
+          INNER JOIN clients_inventories ON clients.id = clients_inventories.client_id
+          INNER JOIN inventories ON inventories.id = clients_inventories.inventory_id
+          INNER JOIN products ON inventories.product_id = products.id
+        [0m
+  ↳ app/controllers/inventories_controller.rb:42
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/raw_materials/get_history" for ::1 at 2019-07-23 09:25:15 -0500
+Processing by RawMaterialsController#get_history as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34m
+      SELECT clients.name AS cname, raw_materials.name, clients_raw_materials.cost, clients_raw_materials.arrived_at FROM
+      clients
+      INNER JOIN clients_raw_materials ON clients.id = clients_raw_materials.client_id
+      INNER JOIN raw_materials ON clients_raw_materials.raw_material_id = raw_materials.id
+    [0m
+  ↳ app/controllers/raw_materials_controller.rb:35
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/clients/show_clients" for ::1 at 2019-07-23 09:25:17 -0500
+Processing by ClientsController#show_clients as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "REGULARES"]]
+  ↳ app/controllers/clients_controller.rb:31
+Completed 200 OK in 2ms (Views: 1.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/inventories/get_full" for ::1 at 2019-07-23 09:25:17 -0500
+Processing by InventoriesController#get_full as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34m
+          SELECT inventories.id AS id, products.name AS name FROM
+          inventories
+          INNER JOIN products ON inventories.product_id = products.id
+        [0m
+  ↳ app/controllers/inventories_controller.rb:54
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/clients/show_clients" for ::1 at 2019-07-23 09:25:28 -0500
+Processing by ClientsController#show_clients as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "REGULARES"]]
+  ↳ app/controllers/clients_controller.rb:31
+Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories/get_full" for ::1 at 2019-07-23 09:25:28 -0500
+Processing by InventoriesController#get_full as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34m
+          SELECT inventories.id AS id, products.name AS name FROM
+          inventories
+          INNER JOIN products ON inventories.product_id = products.id
+        [0m
+  ↳ app/controllers/inventories_controller.rb:54
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/clients" for ::1 at 2019-07-23 09:25:33 -0500
+Processing by ClientsController#index as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/controllers/clients_controller.rb:3
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/clients/show_suppliers" for ::1 at 2019-07-23 09:25:34 -0500
+Processing by ClientsController#show_suppliers as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "PROOVEDORES"]]
+  ↳ app/controllers/clients_controller.rb:26
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/clients/show_suppliers" for ::1 at 2019-07-23 09:25:51 -0500
+Processing by ClientsController#show_suppliers as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "PROOVEDORES"]]
+  ↳ app/controllers/clients_controller.rb:26
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:26:04 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.6ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:3
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/inventories/get_sell" for ::1 at 2019-07-23 09:26:06 -0500
+Processing by InventoriesController#get_sell as HTML
+  [1m[36mClient Load (0.7ms)[0m  [1m[34m
+          SELECT clients.name AS cname, products.name, clients_inventories.quantity, clients_inventories.city FROM
+          clients
+          INNER JOIN clients_inventories ON clients.id = clients_inventories.client_id
+          INNER JOIN inventories ON inventories.id = clients_inventories.inventory_id
+          INNER JOIN products ON inventories.product_id = products.id
+        [0m
+  ↳ app/controllers/inventories_controller.rb:42
+Completed 200 OK in 3ms (Views: 1.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/raw_materials/get_history" for ::1 at 2019-07-23 09:26:06 -0500
+Processing by RawMaterialsController#get_history as HTML
+  [1m[36mClient Load (0.9ms)[0m  [1m[34m
+      SELECT clients.name AS cname, raw_materials.name, clients_raw_materials.cost, clients_raw_materials.arrived_at FROM
+      clients
+      INNER JOIN clients_raw_materials ON clients.id = clients_raw_materials.client_id
+      INNER JOIN raw_materials ON clients_raw_materials.raw_material_id = raw_materials.id
+    [0m
+  ↳ app/controllers/raw_materials_controller.rb:35
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/clients/show_clients" for ::1 at 2019-07-23 09:26:08 -0500
+Processing by ClientsController#show_clients as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34mSELECT "clients".* FROM "clients" WHERE "clients"."client_type" = ?[0m  [["client_type", "REGULARES"]]
+  ↳ app/controllers/clients_controller.rb:31
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/inventories/get_full" for ::1 at 2019-07-23 09:26:08 -0500
+Processing by InventoriesController#get_full as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34m
+          SELECT inventories.id AS id, products.name AS name FROM
+          inventories
+          INNER JOIN products ON inventories.product_id = products.id
+        [0m
+  ↳ app/controllers/inventories_controller.rb:54
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/inventories/get_sell" for ::1 at 2019-07-23 09:26:16 -0500
+Processing by InventoriesController#get_sell as HTML
+  [1m[36mClient Load (0.4ms)[0m  [1m[34m
+          SELECT clients.name AS cname, products.name, clients_inventories.quantity, clients_inventories.city FROM
+          clients
+          INNER JOIN clients_inventories ON clients.id = clients_inventories.client_id
+          INNER JOIN inventories ON inventories.id = clients_inventories.inventory_id
+          INNER JOIN products ON inventories.product_id = products.id
+        [0m
+  ↳ app/controllers/inventories_controller.rb:42
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/raw_materials/get_history" for ::1 at 2019-07-23 09:26:16 -0500
+Processing by RawMaterialsController#get_history as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34m
+      SELECT clients.name AS cname, raw_materials.name, clients_raw_materials.cost, clients_raw_materials.arrived_at FROM
+      clients
+      INNER JOIN clients_raw_materials ON clients.id = clients_raw_materials.client_id
+      INNER JOIN raw_materials ON clients_raw_materials.raw_material_id = raw_materials.id
+    [0m
+  ↳ app/controllers/raw_materials_controller.rb:35
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/raw_materials/get_expenses" for ::1 at 2019-07-23 09:26:18 -0500
+Processing by RawMaterialsController#get_expenses as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34m
+      SELECT cost, date(arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY date(arrived_at);[0m
+  ↳ app/controllers/raw_materials_controller.rb:46
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/raw_materials" for ::1 at 2019-07-23 09:26:18 -0500
+Processing by RawMaterialsController#index as HTML
+  [1m[36mRawMaterial Load (0.5ms)[0m  [1m[34mSELECT "raw_materials".* FROM "raw_materials"[0m
+  ↳ app/controllers/raw_materials_controller.rb:6
+Completed 200 OK in 45ms (Views: 1.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/inventories" for ::1 at 2019-07-23 09:27:20 -0500
+Processing by InventoriesController#index as HTML
+  [1m[36mInventory Load (0.1ms)[0m  [1m[34mSELECT "inventories".* FROM "inventories"[0m
+  ↳ app/controllers/inventories_controller.rb:3
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/inventories/get_sell" for ::1 at 2019-07-23 09:27:24 -0500
+Processing by InventoriesController#get_sell as HTML
+  [1m[36mClient Load (0.3ms)[0m  [1m[34m
+          SELECT clients.name AS cname, products.name, clients_inventories.quantity, clients_inventories.city FROM
+          clients
+          INNER JOIN clients_inventories ON clients.id = clients_inventories.client_id
+          INNER JOIN inventories ON inventories.id = clients_inventories.inventory_id
+          INNER JOIN products ON inventories.product_id = products.id
+        [0m
+  ↳ app/controllers/inventories_controller.rb:42
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/raw_materials/get_history" for ::1 at 2019-07-23 09:27:24 -0500
+Processing by RawMaterialsController#get_history as HTML
+  [1m[36mClient Load (0.2ms)[0m  [1m[34m
+      SELECT clients.name AS cname, raw_materials.name, clients_raw_materials.cost, clients_raw_materials.arrived_at FROM
+      clients
+      INNER JOIN clients_raw_materials ON clients.id = clients_raw_materials.client_id
+      INNER JOIN raw_materials ON clients_raw_materials.raw_material_id = raw_materials.id
+    [0m
+  ↳ app/controllers/raw_materials_controller.rb:35
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/clients" for ::1 at 2019-07-23 09:27:26 -0500
+Processing by ClientsController#index as HTML
+  [1m[36mClient Load (0.1ms)[0m  [1m[34mSELECT "clients".* FROM "clients"[0m
+  ↳ app/controllers/clients_controller.rb:3
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/raw_materials" for ::1 at 2019-07-23 09:27:27 -0500
+Processing by RawMaterialsController#index as HTML
+  [1m[36mRawMaterial Load (0.2ms)[0m  [1m[34mSELECT "raw_materials".* FROM "raw_materials"[0m
+  ↳ app/controllers/raw_materials_controller.rb:6
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/raw_materials/get_history" for ::1 at 2019-07-23 09:27:27 -0500
+Processing by RawMaterialsController#get_history as HTML
+  [1m[36mClient Load (0.3ms)[0m  [1m[34m
+>>>>>>> develop
+      SELECT clients.name AS cname, raw_materials.name, clients_raw_materials.cost, clients_raw_materials.arrived_at FROM
+      clients
+      INNER JOIN clients_raw_materials ON clients.id = clients_raw_materials.client_id
+      INNER JOIN raw_materials ON clients_raw_materials.raw_material_id = raw_materials.id
+    [0m
+  ↳ app/controllers/raw_materials_controller.rb:35
+<<<<<<< HEAD
 Completed 200 OK in 13ms (Views: 0.8ms | ActiveRecord: 1.3ms)
 
 
@@ -15786,3 +17403,8 @@ Completed 200 OK in 1ms (Views: 0.9ms | ActiveRecord: 0.2ms)
   [1m[36mInventory Load (0.2ms)[0m  [1m[34mSELECT  "inventories".* FROM "inventories" ORDER BY "inventories"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mInventory Load (0.4ms)[0m  [1m[34mSELECT  "inventories".* FROM "inventories" ORDER BY "inventories"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT  "products".* FROM "products" WHERE "products"."inventory_id" = ? LIMIT ?[0m  [["inventory_id", 6], ["LIMIT", 1]]
+=======
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms)
+
+
+>>>>>>> develop

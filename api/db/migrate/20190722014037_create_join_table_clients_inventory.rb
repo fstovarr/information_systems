@@ -7,6 +7,7 @@ class CreateJoinTableClientsInventory < ActiveRecord::Migration[5.2]
       t.string :city
       t.string :address
       t.string :phone
+      t.decimal :quantity, null: false
     end
   end
 end

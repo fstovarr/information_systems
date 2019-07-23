@@ -42,6 +42,15 @@ class RawMaterialsController < ApplicationController
 
   end
 
+  def get_expenses
+    expenses = Client.find_by_sql("
+      SELECT cost, date(arrived_at) AS date
+      FROM clients_raw_materials
+      GROUP BY date(arrived_at);")
+      render json: expenses, status: :ok
+
+  end
+
 
   def raw_materials_discount
     raw_material = RawMaterial.find(params[:id])

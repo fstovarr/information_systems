@@ -27,6 +27,11 @@ class ClientsController < ApplicationController
 
     end
 
+    def show_clients
+        render json: Client.where(client_type: 'REGULARES').all
+
+    end
+
     private
     def get_params
         params.require(:client).permit(:name, :address, :client_type, :phone)

@@ -60,40 +60,57 @@ const styles = {
   }
 };
 
-class MateriaPrimaAdd extends React.Component {
+class PedidoAdd extends React.Component {
   state = {
     suppliers: [],
     supplier: '',
     name: '',
-    telephone: '',
-    address: '',
-    type: '',
+    description: '',
+    quantity: '',
+    price: '',
+    date: '',
+    products: [],
+    materia: '',
+    clients: []
   }
 
   componentWillMount() {
-    axios.get(webAddress + '/clients/show_suppliers')
+    axios.get(webAddress + '/clients/show_clients')
       .then(res => {
         for (var i = 0; i < res.data.length; i++) {
           var data = res.data[i]
           this.setState(prevState => ({
-            suppliers: [...prevState.suppliers, <MenuItem value={data.id}>{data.name}</MenuItem>]
+            clients: [...prevState.clients, <MenuItem value={data.id}>{data.name}</MenuItem>]
           }))
         }
+
+        axios.get(webAddress + '/inventories/get_full').then(
+          res => {
+            for (var i = 0; i < res.data.length; i++) {
+              var data = res.data[i]
+              this.setState(prevState => ({
+                products: [...prevState.products, <MenuItem value={data.id}>{data.name}</MenuItem>]
+              }))
+            }
+          }
+        )
       })
 
   }
 
   handleAdd() {
-    axios.post(webAddress + '/clients',
+    axios.put(webAddress + '/inventories/sell',
       {
-        client: {
-          name: this.state.name,
-          phone: this.state.phone,
+        register: {
+          client_id: this.state.client,
+          inventory_id: this.state.product,
+          city: this.state.city,
           address: this.state.address,
-          client_type: this.state.type,
+          phone: this.state.phone,
+          quantity: this.state.quantity,
         }
       }).then(() => {
-        this.props.history.push(`users`)
+        this.props.history.push(`typography`)
       })
   }
 
@@ -110,22 +127,87 @@ class MateriaPrimaAdd extends React.Component {
           <GridItem xs={12} sm={12} md={12}>
             <Card>
               <CardHeader color="primary">
-                <h4 className={classes.cardTitleWhite}>Crear Usuario</h4>
+                <h4 className={classes.cardTitleWhite}>Añadir Pedido</h4>
               </CardHeader>
               <CardBody>
                 <GridContainer>
+                  <GridItem xs={12} sm={12} md={4}>
 
-                  <GridItem xs={12} sm={12} md={6}>
                     <TextField
-                      value={this.state.name}
-                      onChange={handleChange('name')}
-                      label="Nombre"
-                      id="name"
+                      id="standard-select-currency"
+                      select
+                      value={this.state.client}
+                      onChange={handleChange('client')}
+                      className={classes.textField}
+                      SelectProps={{
+                        MenuProps: {
+                          className: classes.menu,
+                        },
+                      }}
+                      fullWidth
+                      helperText="Seleccione el cliente"
+                      margin="normal"
+                    >
+                      {this.state.clients}
+                    </TextField>
+                  </GridItem>
+                  <GridItem xs={12} sm={12} md={4}>
+
+                    <TextField
+                      id="standard-select-currency"
+                      select
+                      value={this.state.product}
+                      onChange={handleChange('product')}
+                      className={classes.textField}
+                      SelectProps={{
+                        MenuProps: {
+                          className: classes.menu,
+                        },
+                      }}
+                      fullWidth
+                      helperText="Seleccione el producto"
+                      margin="normal"
+                    >
+                      {this.state.products}
+                    </TextField>
+                  </GridItem>
+                  <GridItem xs={12} sm={12} md={3}>
+                    <TextField
+                      value={this.state.quantity}
+                      onChange={handleChange('quantity')}
+                      className={classes.textField}
+
+                      label="Cantidad"
+                      id="description"
+                      fullWidth
+                    />
+                  </GridItem>
+
+                </GridContainer>
+                <GridContainer>
+                  <GridItem xs={12} sm={12} md={3}>
+                    <TextField
+                      value={this.state.city}
+                      onChange={handleChange('city')}
+                      label="Ciudad"
+                      id="description"
                       fullWidth
                       className={classes.textField}
                     />
                   </GridItem>
-                  <GridItem xs={12} sm={12} md={6}>
+                  <GridItem xs={12} sm={12} md={3}>
+
+                    <TextField
+                      value={this.state.address}
+                      onChange={handleChange('address')}
+                      label="Dirección"
+                      id="description"
+                      fullWidth
+                      className={classes.textField}
+                    />
+                  </GridItem>
+                  <GridItem xs={12} sm={12} md={3}>
+
                     <TextField
                       value={this.state.phone}
                       onChange={handleChange('phone')}
@@ -136,43 +218,10 @@ class MateriaPrimaAdd extends React.Component {
                     />
                   </GridItem>
                 </GridContainer>
-                <GridContainer>
 
-                  <GridItem xs={12} sm={12} md={6}>
-                    <TextField
-                      value={this.state.address}
-                      onChange={handleChange('address')}
-                      label="Direccióm"
-                      id="name"
-                      fullWidth
-                      className={classes.textField}
-                    />
-                  </GridItem>
-                  <GridItem xs={12} sm={12} md={6}>
-                    <TextField
-                      id="standard-select-currency"
-                      select
-                      value={this.state.type}
-                      onChange={handleChange('type')}
-                      className={classes.textField}
-                      SelectProps={{
-                        MenuProps: {
-                          className: classes.menu,
-                        },
-                      }}
-                      fullWidth
-                      helperText="Seleccione el tipo de usuario"
-                      margin="normal"
-                    >
-                      <MenuItem value="PROOVEDORES">PROOVEDORES</MenuItem>
-                      <MenuItem value="SATELITES">SATELITES</MenuItem>
-                      <MenuItem value="REGULARES">REGULARES</MenuItem>
-                    </TextField>
-                  </GridItem>
-                </GridContainer>
               </CardBody>
               <CardFooter>
-                <Button color="primary" onClick={() => this.handleAdd()} >Crear Usuarios</Button>
+                <Button color="primary" onClick={() => this.handleAdd()} >Añadir Pedido</Button>
               </CardFooter>
             </Card>
           </GridItem>
@@ -184,8 +233,8 @@ class MateriaPrimaAdd extends React.Component {
 
 }
 
-MateriaPrimaAdd.propTypes = {
+PedidoAdd.propTypes = {
   classes: PropTypes.object
 };
 
-export default withStyles(styles)(MateriaPrimaAdd);
+export default withStyles(styles)(PedidoAdd);
