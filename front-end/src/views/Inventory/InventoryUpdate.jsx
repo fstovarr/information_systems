@@ -34,25 +34,29 @@ const styles = {
     }
   };
 
-class InventoryAdd extends React.Component {
-    state = {
-        name: "",
-        quantity: 0,
-        retailer_cost: 0,
-        wholesale_cost: 0
-    }
+class InventoryUpdate extends React.Component {
+    
 
     constructor(props) {
         super(props);
+
+        var st = props.location.state;
+        this.state = {
+          id: st[0],
+          quantity: st[1],
+          retailer_cost: st[2],
+          wholesale_cost: st[3]
+        };
+
         this.addToInventory = this.addToInventory.bind(this);
     }
-
+    x
     handleChange = name => event => {
         this.setState({ [name]: event.target.value });
     };
 
     addToInventory() {
-        Http.post("/inventories", this.state).then(res => console.log(res)).catch(err => console.log("ERROR " + err));
+        Http.patch("/inventories", this.state).then(res => this.props.history.push("/table")).catch(err => console.log("ERROR " + err));
     }
 
     render() {
@@ -62,23 +66,13 @@ class InventoryAdd extends React.Component {
         <GridItem xs={12} sm={12} md={12}>
           <Card>
             <CardHeader color="primary">
-              <h4 className={classes.cardTitleWhite}>Añadir producto a inventario</h4>
+              <h4 className={classes.cardTitleWhite}>Actualizar producto</h4>
             </CardHeader>
             <CardBody>
               <GridContainer>
                 <GridItem xs={12} sm={12} md={6}>
                   <TextField
-                    // value={this.state.name}
-                    onChange={this.handleChange('name')}
-                    label="Nombre del producto"
-                    id="name"
-                    fullWidth
-                    className={classes.textField}
-                  />
-                </GridItem>
-                <GridItem xs={12} sm={12} md={6}>
-                  <TextField
-                    // value={this.state.phone}
+                    value={this.state.quantity}
                     onChange={this.handleChange('quantity')}
                     label="Cantidad"
                     id="quantity"
@@ -90,7 +84,7 @@ class InventoryAdd extends React.Component {
               <GridContainer>
                 <GridItem xs={12} sm={12} md={6}>
                   <TextField
-                    // value={this.state.address}
+                    value={this.state.retailer_cost}
                     onChange={this.handleChange('retailer_cost')}
                     label="Costo minorista"
                     id="retailer"
@@ -100,7 +94,7 @@ class InventoryAdd extends React.Component {
                 </GridItem>
                 <GridItem xs={12} sm={12} md={6}>
                   <TextField
-                    // value={this.state.address}
+                    value={this.state.wholesale_cost}
                     onChange={this.handleChange('wholesale_cost')}
                     label="Costo mayorista"
                     id="wholesale"
@@ -115,9 +109,8 @@ class InventoryAdd extends React.Component {
             </CardFooter>
           </Card>
         </GridItem>
-
       </GridContainer>;
     }
 }
 
-export default withStyles(styles)(InventoryAdd);
+export default withStyles(styles)(InventoryUpdate);

@@ -21,6 +21,7 @@ import DiscountMateria from "views/MateriaPrima/DiscountMateria.jsx";
 import Users from "views/UserProfile/Users.jsx";
 import UsersAdd from "views/UserProfile/UsersAdd.jsx";
 import InventoryAdd from "views/Inventory/InventoryAdd.jsx";
+import InventoryUpdate from "views/Inventory/InventoryUpdate.jsx";
 
 const dashboardRoutes = [
   {
@@ -53,6 +54,15 @@ const dashboardRoutes = [
     rtlName: "قائمة الجدول",
     icon: "content_paste",
     component: InventoryAdd,
+    layout: "/admin",
+    hide: true
+  },
+  {
+    path: "/inventory/update",
+    name: "Añadir inventario",
+    rtlName: "قائمة الجدول",
+    icon: "content_paste",
+    component: InventoryUpdate,
     layout: "/admin",
     hide: true
   },

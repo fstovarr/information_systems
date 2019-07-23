@@ -28,13 +28,7 @@ class InventoriesController < ApplicationController
         @inventory = Inventory.find(params[:id])
         @inventory.destroy
     end
-    
-<<<<<<< HEAD
-    private
-    def get_params
-        params.require(:inventory).permit(:product_id, :name, :quantity, :retailer_cost, :wholesale_cost)
-    end    
-=======
+
     def sell
       raw_params = sell_params
 
@@ -81,5 +75,4 @@ class InventoriesController < ApplicationController
     def sell_params
         params.require(:register).permit(:client_id, :inventory_id, :city, :address, :phone, :quantity)
     end
->>>>>>> develop
 end

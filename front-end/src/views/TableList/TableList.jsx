@@ -123,6 +123,8 @@ class TableList extends React.Component {
             </CardHeader>
             <CardBody>
               <Table
+                hover="true"
+                handleClick={(event, key) => this.props.history.push("inventory/update", this.state.inventory[key])}
                 tableHeaderColor="primary"
                 tableHead={["id", "Producto", "Cantidad", "Costo minorista", "Costo"]}
                 tableData={this.state.inventory}
