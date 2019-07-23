@@ -119,8 +119,7 @@ function TableList(props) {
             />
           </CardBody>
         </Card>
-      </GridItem>
-      
+      </GridItem>      
       </GridContainer>
   );
 }
