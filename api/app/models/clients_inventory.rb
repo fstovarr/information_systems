@@ -1,0 +1,2 @@
+class ClientsInventory < ApplicationRecord
+end
