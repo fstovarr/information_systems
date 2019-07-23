@@ -17,6 +17,7 @@ api/log/*
 api/tmp/*
 api/log/.keep
 api/tmp/.keep
+api/tmp/cache/*
 
 # TODO Comment out this rule if you are OK with secrets being uploaded to the repo
 api/config/initializers/secret_token.rb
