@@ -19,6 +19,8 @@ import MateriaPrimaAdditional from "views/MateriaPrima/MateriaPrimaAdditional.js
 import DiscountMateria from "views/MateriaPrima/DiscountMateria.jsx";
 import Users from "views/UserProfile/Users.jsx";
 import UsersAdd from "views/UserProfile/UsersAdd.jsx";
+import InventoryAdd from "views/Inventory/InventoryAdd.jsx";
+
 const dashboardRoutes = [
   {
     path: "/dashboard",
@@ -32,7 +34,7 @@ const dashboardRoutes = [
     path: "/user",
     name: "Envíos",
     rtlName: "ملف تعريفي للمستخدم",
-    icon: Person,
+    icon: LocationOn,
     component: UserProfile,
     layout: "/admin"
   },
@@ -43,6 +45,15 @@ const dashboardRoutes = [
     icon: "content_paste",
     component: TableList,
     layout: "/admin"
+  },
+  {
+    path: "/inventory/add",
+    name: "Añadir inventario",
+    rtlName: "قائمة الجدول",
+    icon: "content_paste",
+    component: InventoryAdd,
+    layout: "/admin",
+    hide: true
   },
   {
     path: "/typography",
@@ -64,7 +75,7 @@ const dashboardRoutes = [
     path: "/users",
     name: "Usuarios",
     rtlName: "خرائط",
-    icon: LocationOn,
+    icon: Person,
     component: Users,
     layout: "/admin"
   }

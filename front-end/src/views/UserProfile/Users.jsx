@@ -68,7 +68,6 @@ class Dashboard extends React.Component {
 
   handleEdit(id) {
     this.props.history.push(`materia/` + id)
-
   }
 
   handleAdd(id) {
@@ -135,10 +134,7 @@ class Dashboard extends React.Component {
           </GridItem>
         </GridContainer>
 
-
-
       </div>
-
     );
   }
 

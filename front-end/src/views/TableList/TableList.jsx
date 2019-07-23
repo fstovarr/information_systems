@@ -28,6 +28,7 @@ import Card from "components/Card/Card.jsx";
 import CardHeader from "components/Card/CardHeader.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import Http from "services/RestService.js";
+import Button from "components/CustomButtons/Button.jsx";
 
 const styles = {
   cardCategoryWhite: {
@@ -59,32 +60,8 @@ const styles = {
   }
 };
 
-function makeInventoryRequest(setInventory) {
-  Http.get("/inventories").then(res => {
-    var arr = [];
-
-    Object.keys(res["data"]).forEach(key => {
-      var tmp = [];
-      if(res["data"][key] != null){
-        Object.keys(res["data"][key]).forEach(key2 => {
-          if(res["data"][key][key2] == null)
-            tmp.push("No disponible");
-          else
-            tmp.push(res["data"][key][key2]);
-        });
-      }
-      arr.push(tmp);
-    });
-
-    setInventory(arr);
-  }).catch(err => console.log("ERROR " + err));
-}
-
-function TableList(props) {
-  const { classes } = props;
-  const [inventory, setInventory] = useState(0);
-
-  const vari = [
+class TableList extends React.Component {
+  vari = [
     ["1", "Dakota Rice", "Niger", "Oud-Turnhout", "$36,738"],
     ["2", "Minerva Hooper", "Curaçao", "Sinaai-Waas", "$23,789"],
     ["3","Sage Rodriguez", "Netherlands", "Baileux", "$56,142"],
@@ -93,35 +70,70 @@ function TableList(props) {
     ["6","Mason Porter", "Chile", "Gloucester", "$78,615"]
   ];
 
-  if(inventory == null || inventory == undefined || inventory == 0){
-    makeInventoryRequest(setInventory);
-    setInventory(vari);
-  }
-  
-  //console.log(inventory);
-  //console.log(vari);
+  state = { inventory:[] }
 
-  return (
-    <GridContainer>
-      <GridItem xs={12} sm={12} md={12}>
-        <Card>
-          <CardHeader color="primary">
-            <h4 className={classes.cardTitleWhite}>Inventario</h4>
-            <p className={classes.cardCategoryWhite}>
-              Aquí encontrará el inventario en bodega que ha sido registrado.
-            </p>
-          </CardHeader>
-          <CardBody>
-            <Table
-              tableHeaderColor="primary"
-              tableHead={["id", "Producto", "Cantidad", "Costo minorista", "Costo"]}
-              tableData={inventory}
-            />
-          </CardBody>
-        </Card>
-      </GridItem>      
-      </GridContainer>
-  );
+  constructor(props) {
+    super(props);
+    this.handleAdd = this.handleAdd.bind(this);
+  }
+
+  handleAdd() {
+    this.props.history.push('inventory/add');
+  }
+
+  makeInventoryRequest(setInventory) {
+    Http.get("/inventories").then(res => {
+      var arr = [];
+  
+      Object.keys(res["data"]).forEach(key => {
+        var tmp = [];
+        if(res["data"][key] != null){
+          Object.keys(res["data"][key]).forEach(key2 => {
+            if(res["data"][key][key2] == null)
+              tmp.push("No disponible");
+            else
+              tmp.push(res["data"][key][key2]);
+          });
+        }
+        arr.push(tmp);
+      });
+  
+      this.setState({
+        inventory: arr
+      });
+    }).catch(err => console.log("ERROR " + err));
+  }
+
+  render() {
+    const { classes } = this.props;
+
+    if(this.state.inventory == null || this.state.inventory == undefined || this.state.inventory == 0){
+      this.makeInventoryRequest();
+    }
+
+    return (
+      <GridContainer>
+        <GridItem xs={12} sm={12} md={12}>
+          <Card>
+            <CardHeader color="primary">
+              <h4 className={classes.cardTitleWhite}>Inventario</h4>
+              <p className={classes.cardCategoryWhite}>
+                Aquí encontrará el inventario en bodega que ha sido registrado.
+              </p>
+            </CardHeader>
+            <CardBody>
+              <Table
+                tableHeaderColor="primary"
+                tableHead={["id", "Producto", "Cantidad", "Costo minorista", "Costo"]}
+                tableData={this.state.inventory}
+              />
+            </CardBody>
+          </Card>
+          <Button color="primary" onClick={this.handleAdd}>Agregar inventario</Button>
+        </GridItem>
+        </GridContainer>
+    );
+  }
 }
 
 TableList.propTypes = {
