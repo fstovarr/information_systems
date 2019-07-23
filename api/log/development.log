@@ -343,3 +343,103 @@ Migrating to CreateJoinTableClientsRawMaterials (20190722014216)
   ↳ bin/rails:4
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ bin/rails:4
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/rubies/ruby-2.6.3/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Started POST "/raw_materials" for ::1 at 2019-07-22 21:32:48 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/cristhiancamilogomezneira/.rvm/gems/ruby-2.6.3/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by RawMaterialsController#create as */*
+  Parameters: {"raw_material"=>{"name"=>"material 1", "quantity"=>"22", "description"=>"cuerina roja"}}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/raw_materials_controller.rb:10
+  [1m[36mRawMaterial Create (0.9ms)[0m  [1m[32mINSERT INTO "raw_materials" ("name", "quantity", "description") VALUES (?, ?, ?)[0m  [["name", "material 1"], ["quantity", 22], ["description", "cuerina roja"]]
+  ↳ app/controllers/raw_materials_controller.rb:10
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/raw_materials_controller.rb:10
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/raw_materials_controller.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/raw_materials_controller.rb:12
+Completed 200 OK in 12ms (Views: 0.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/raw_materials/1" for ::1 at 2019-07-22 21:32:57 -0500
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for RawMaterialsController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/raw_materials/" for ::1 at 2019-07-22 21:33:11 -0500
+Processing by RawMaterialsController#index as */*
+  Parameters: {"raw_material"=>{"name"=>"material 1", "quantity"=>"22", "description"=>"cuerina roja"}}
+  [1m[36mRawMaterial Load (0.2ms)[0m  [1m[34mSELECT "raw_materials".* FROM "raw_materials"[0m
+  ↳ app/controllers/raw_materials_controller.rb:6
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/raw_materials/1" for ::1 at 2019-07-22 21:33:37 -0500
+Processing by RawMaterialsController#show as */*
+  Parameters: {"raw_material"=>{"name"=>"material 1", "quantity"=>"22", "description"=>"cuerina roja"}, "id"=>"1"}
+  [1m[36mRawMaterial Load (0.7ms)[0m  [1m[34mSELECT  "raw_materials".* FROM "raw_materials" WHERE "raw_materials"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/raw_materials_controller.rb:39
+Completed 200 OK in 18ms (Views: 0.8ms | ActiveRecord: 1.6ms)
+
+
+Started PUT "/raw_materials/1" for ::1 at 2019-07-22 21:35:28 -0500
+Processing by RawMaterialsController#update as */*
+  Parameters: {"raw_material"=>{"name"=>"material 1", "quantity"=>"27772", "description"=>"cuerina roja"}, "id"=>"1"}
+  [1m[36mRawMaterial Load (0.2ms)[0m  [1m[34mSELECT  "raw_materials".* FROM "raw_materials" WHERE "raw_materials"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/raw_materials_controller.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/raw_materials_controller.rb:22
+  [1m[36mRawMaterial Update (3.2ms)[0m  [1m[33mUPDATE "raw_materials" SET "quantity" = ? WHERE "raw_materials"."id" = ?[0m  [["quantity", 27772], ["id", 1]]
+  ↳ app/controllers/raw_materials_controller.rb:22
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/raw_materials_controller.rb:22
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 4.8ms)
+
+
