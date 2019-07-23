@@ -1,0 +1,2 @@
+class ClientsRawMaterial < ApplicationRecord
+end
