@@ -33,14 +33,6 @@ const dashboardRoutes = [
     layout: "/admin"
   },
   {
-    path: "/user",
-    name: "Envíos",
-    rtlName: "ملف تعريفي للمستخدم",
-    icon: LocationOn,
-    component: UserProfile,
-    layout: "/admin"
-  },
-  {
     path: "/table",
     name: "Inventario",
     rtlName: "قائمة الجدول",
@@ -72,14 +64,6 @@ const dashboardRoutes = [
     rtlName: "طباعة",
     icon: LibraryBooks,
     component: Typography,
-    layout: "/admin"
-  },
-  {
-    path: "/icons",
-    name: "Estadísticas",
-    rtlName: "الرموز",
-    icon: BubbleChart,
-    component: Icons,
     layout: "/admin"
   },
   {

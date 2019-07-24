@@ -107,15 +107,6 @@ class Dashboard extends React.Component {
 
 
 
-        axios.get(webAddress + '/raw_materials/get_history').then(res => {
-          for (var i = 0; i < res.data.length; i++) {
-            var data = res.data[i]
-            console.log(data)
-            this.setState(prevState => ({
-              history: [...prevState.history, [data.cname, data.name, data.cost.toString(), data.arrived_at]]
-            }))
-          }
-        })
       })
   }
   render() {

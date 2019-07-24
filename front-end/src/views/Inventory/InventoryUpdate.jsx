@@ -42,13 +42,14 @@ class InventoryUpdate extends React.Component {
 
         var st = props.location.state;
         this.state = {
-          id: st[0],
-          quantity: st[1],
-          retailer_cost: st[2],
-          wholesale_cost: st[3]
+          id: st[1],
+          quantity: st[2],
+          retailer_cost: st[3],
+          wholesale_cost: st[4]
         };
 
         this.addToInventory = this.addToInventory.bind(this);
+        this.deleteToInventory = this.deleteToInventory.bind(this);
     }
     x
     handleChange = name => event => {
@@ -56,7 +57,11 @@ class InventoryUpdate extends React.Component {
     };
 
     addToInventory() {
-        Http.patch("/inventories", this.state).then(res => this.props.history.push("/table")).catch(err => console.log("ERROR " + err));
+      Http.patch("/inventories/" + this.state.id, this.state).then(res => this.props.history.push("/admin/table")).catch(err => console.log("ERROR " + err));
+    }
+
+    deleteToInventory() {
+      Http.delete("/inventories/" + this.state.id, this.state).then(res => this.props.history.push("/admin/table")).catch(err => console.log("ERROR " + err));
     }
 
     render() {
@@ -105,7 +110,8 @@ class InventoryUpdate extends React.Component {
               </GridContainer>
             </CardBody>
             <CardFooter>
-              <Button color="primary" onClick={this.addToInventory}>Añadir a inventario</Button>
+              <Button color="primary" onClick={this.addToInventory}>Actualizar inventario</Button>
+              <Button color="primary" onClick={this.deleteToInventory}>Eliminar de inventario</Button>
             </CardFooter>
           </Card>
         </GridItem>

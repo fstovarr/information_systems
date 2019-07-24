@@ -56,18 +56,13 @@ export default {
     var response = new Promise((resolve, reject) => {
       var headers = {};
 
-      headers['Access-Control-Allow-Origin'] = '*';
-      headers['Access-Control-Allow-Methods'] = 'POST, PUT, DELETE, GET, OPTIONS';
-      headers['Access-Control-Request-Method'] = '*';
-      headers['Access-Control-Allow-Headers'] = 'Origin, X-Requested-With, Content-Type, Accept, Authorization';
-
       if (withCredentials)
         headers = { /*Authorization: "Bearer " + auth.getToken()*/ };
 
       var url = withBase ? baseURL + path : "" + path;
 
       axios
-        .patch(url, body, { headers: headers })
+        .put(url, body, { headers: headers })
         .then(response => resolve(response))
         .catch(error => {
           this.process_error(error);
